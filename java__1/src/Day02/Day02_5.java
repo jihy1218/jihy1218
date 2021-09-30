@@ -1,5 +1,6 @@
 package Day02;
  // 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;
+ // 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
 public class Day02_5 {
 
 		// 문자 : char
