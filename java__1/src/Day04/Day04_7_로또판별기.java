@@ -22,7 +22,7 @@ public class Day04_7_로또판별기 {
 		int [] number = new int[6]; // int형 6개 변수를 저장할수있는 배열
 		int [] random = new int[6];
 			
-		
+		   
 		
 		// 1. 사용자로부터 6개 수를 입역받아 배열에 저장
 		for( int i = 0 ; i<6 ; i++ ) {
