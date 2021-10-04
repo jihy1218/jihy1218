@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Day04_7_로또판별기 {
 
-	public static void main(String[] args) {
+	 public static void main(String[] args) {
 		
 		//조건1 1~45사이의 수를 6개 입력받아 배열에저장
 			// 단 중복불가// 1~45사이만 가능
@@ -16,7 +16,7 @@ public class Day04_7_로또판별기 {
 		
 		
 		// 0. 입력객체
-		Scanner scanner = new Scanner(System.in);
+		 Scanner scanner = new Scanner(System.in);
 	
 		// 0. 배열 [ 배열선언 : 자료형[] 배열명 = new 자료형[길이] ]
 		int [] number = new int[6]; // int형 6개 변수를 저장할수있는 배열

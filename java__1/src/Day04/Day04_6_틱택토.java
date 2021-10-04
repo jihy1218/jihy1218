@@ -6,16 +6,16 @@ import java.util.Scanner;
 public class Day04_6_틱택토 {
 
 	// 배열을 이용한 틱택토게임 프로그램
-	public static void main(String[] args) {
+	 public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
+		 Scanner scanner = new Scanner(System.in);
 		 
 		
 		// 1. 게임판 생성 [ 9칸생성 ] 
 		// String 객체 9개를 저장하는 배열 선언
-		String[]게임판 = {"[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",};
+		 String[]게임판 = {"[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]",};
 		
-		String winner = " "; // 승리 알을 담을 변수
+		 String winner = " "; // 승리 알을 담을 변수
 		int count = 0; // 현재 알수
 		
 		while(true) {
