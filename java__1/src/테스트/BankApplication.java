@@ -69,9 +69,10 @@ public class BankApplication {
 				if(accountArray != null ) {
 					if(accountArray[i].getAno().equals(ano)) {
 						account = accountArray[i];
+						break;
 					}
 				}
-			}
+			} return account;
 	}
 	//¿¹±Ý deposit
 	static void deposit() {

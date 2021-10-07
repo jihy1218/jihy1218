@@ -93,7 +93,7 @@ public class BankApplication {
 	}
 	
 	//Account 배열에서 ano와 동일한 Account객체찾기 메소드 [ 인수o(String ano) 반환o ( Account 객체)]
-	private static Account findAccount( String ano ) {
+	private static Account findAccount(String ano) {
 		Account account = null; // 임시객체
 		
 		for(int i =0 ; i<accountArray.length ; i++ ) {
