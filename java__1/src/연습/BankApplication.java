@@ -23,8 +23,8 @@ public class BankApplication {
 			int selectNo = scanner.nextInt();
 			if(selectNo == 1) { createAccount();}
 			if(selectNo == 2) { accountList();}
-			if(selectNo == 3) { deposit();}
-			if(selectNo == 4) { withdraw();}
+			if(selectNo == 3) {}
+			if(selectNo == 4) { }
 			if(selectNo == 5) { run = false;}
 			
 		}
