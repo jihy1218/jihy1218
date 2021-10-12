@@ -162,12 +162,9 @@ public class BankApplication {
 		
 	}
 	// Account 배열에서 ano와동일한 Account 객체찾기 메소드
-	private static Account findAccount(String ano) {
+//	private static Account findAccount(String ano) {
 		
-	}
-	
-	
-	
+//	}
 	
 	
 	
@@ -176,3 +173,6 @@ public class BankApplication {
 	
 	
 }
+	
+	
+//}
