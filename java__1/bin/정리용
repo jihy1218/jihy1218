@@ -39,6 +39,17 @@
 		.nextInt(숫자)+1 : 1~숫자 까지의 난수 생성 
 		
 	5. Arrays : 배열관련 메소드 제공 클래스
+		1. Arrays.copyOf( 복사할배열 , 복사길이 ) : 배열 복사
+		2. Arrays.toString(배열) : 인덱스 순으로 데이터 출력
+		3. Arrays.copyOfRange(복사할배열 , 시작인덱스 , 끝인덱스)
+		4. System.arraycopy( 원본배열, 시작인덱스, 타겟배열 , 타겟시작인덱스 , 복사개수 )
+		5. Arrays.equals( 배열1 , 배열2 ) : 1차원 배열 비교
+		6. Arrays.deepEquals( 배열1 , 배열2 ) : 2차원 배열 비교
+		7. Arrays.sort( 배열명 ) : 해당 배열내 오름차순 정렬
+		8. Arrays.sort( 배열명 , Collections.reverseOrder() );  배열내 내림차순 정렬
+			" 주의 : 해당 배열이 기본자료형일 경우 불가
+		9. Arrays.binarySearch( 배열명 , 데이터 ) : 해당 데이터의 인덱스 번호
+			" 주의 : 오름차순 정렬후 사용
 		.sort( 배열명 ) : 해당 배열을 오름차순 
 		.sort( 배열명, Collections.reverseOrder() ) : 내림차순 
 		
@@ -48,14 +59,31 @@
 		*SimpleDateFormat : 날짜 형식 클래스 
 			SimpleDateFormat dateFormat = new SimpleDateFormat( "MM-dd" );
 			dateFormat.format(날짜객체);
+			
+	7. Calendar 클래스
+		Calendar now = Calendar.getInstance();
+		now.get(Calendar.필드명) : 해당 필드 정보 얻기
 		
-	7. Integer : 정수 클래스 
+	7-1. ZonedDateTime 클래스 : 협정시계
+		ZonedDateTime.now(ZoneID.of(대륙명/도시명));	
+		
+	8. Integer : 정수 클래스 
 		Integer.parseInt("문자열")   : String -> int형
 		Integer.toString(정수) 		: int -> String  
 			* 숫자+"" 				: int+"" -> String
 		
+	9. Math : 수학 클래스
+		1. Math.abs()
+		2. Math.ceil()
+		3. Math.floor()
+		4. Math.max()
+		5. Math.min()
+		6. Math.random() : 0~1 사이의 난수 생성
+		7. Math.rint()
+		8. Math.round() : 반올림
+		
 형식문자 [ printf ]  
-	%d : 정수 	%숫자d [ 숫자만큼 자릿수 포함 ]		%2d [ 정수가 2칸 차지 ] 
+	%d : 정수 	%숫자d [ 숫자만큼 자릿수 포함 ]		%2d [ 정수가 2칸 차지 ] %02d [ 공백을 0으로사용 ]
 	%f : 실수 	%.2f [ 소수점 2자리 표현 ]
 	%c : 문자 
 	%s : 문자열 
