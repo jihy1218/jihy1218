@@ -10,7 +10,7 @@ public class Day14_3 {
 			// 컬렉션 : 수집 [ 자료구조 : 데이터를 저장하는 방법 ]
 			// 프레임워크 : 미리 만들어진 라이브러리의 사용방법 정의
 		
-		// 1.List : Arraylist, Vector , Linkedlist
+		// 1.List : Arraylist, Vector , LinkedList
 		// 2.Set 
 		// 3.Map
 		
@@ -21,13 +21,14 @@ public class Day14_3 {
 				// 예) 3번 인덱스 삭제시 [ 4번인덱스 -> 3번 // 5번인덱스 -> 4번 ]
 			// 3. 메소드
 				// 1. 리스트명.add(객체명) : 해당 객체를 리스트에 저장
-				// 2. 리스트명.size() : 해당 리스트내 
-				// 3. 리스트명.get(인덱스) :
-				// 4. 리스트명.remove(인덱스) : 
-				// 5. 리스트명.contains(객체) : 
-				// 6. 리스트명.indexOf(객체) :  해당 객체의 리스트내 인덱스
+					// * 리스트명.add( 인덱스 , 객체명 ) : 해당 인덱스 자리에 객체 저장
+				// 2. 리스트명.size() : 해당 리스트내 객체 수
+				// 3. 리스트명.get(인덱스) : 해당 인덱스의 객체 호출
+				// 4. 리스트명.remove(인덱스) : 해당 인덱스 삭제
+				// 5. 리스트명.contains(객체) : 해당 객체의 리스트내 존재 여부 확인 [ true, false ]
+				// 6. 리스트명.indexOf(객체) :  해당 객체의 리스트내 인덱스 번호
 				// 7. 리스트명.clear() : 리스트 초기화
-				// 8. 리스트명.isEmpty() : 리스트가 비어 있는지 여부 확인
+				// 8. 리스트명.isEmpty() : 리스트가 비어 있는지 여부 확인 [ true , false ]
 		
 		// 1. 리스트 선언
 		ArrayList<String> list = new ArrayList<>();
@@ -51,23 +52,25 @@ public class Day14_3 {
 		for( int i = 0 ; i<list.size() ; i++ ) {
 			System.out.println(list.get(i));
 		}
-		// 6 리스트내 모든 객체 호출 [ 2. 반복문 활용 사용 ]
+		// 5_1 리스트내 모든 객체 호출 [ 2. 반복문 활용 사용 ]
 		System.out.println("===리스트내 모든 객체 호출 ==== ");
 		for(String temp : list) {
 			// for(임시객체 : 리스트)
-			// 		리스트내 모든 객체 
+			// 		리스트내 모든 객체를 하나씩 임시 객체에 대입
 			System.out.println(temp);
 		}
 		
-		// 7. 리스트내 객체 삭제
-		list.remove(2);  // Database 삭제
+		// 6. 리스트내 객체 삭제
+		list.remove(2);  // Database 삭제 => 삭제후 => Servles/JSP 객체가 2번 인덱스
 		System.out.println("삭제 확인 : "+ list );
 		list.remove(2);  // Servlet/JSP  삭제
 		System.out.println("삭제 확인 : "+ list );
 		 
-		
+		// 7. 검색
 		System.out.println(list.contains("java"));
 		System.out.println(list.indexOf("java"));
+		
+		// 8.리스트 초기화
 		list.clear();
 		System.out.println(list);
 		
