@@ -39,9 +39,12 @@ public class Day15_7 {
 		
 		System.out.println();
 		// 5. 오름차순 [ 내림차순 
-		NavigableSet<Integer>  = descendingSet;
+		NavigableSet<Integer> ascendingSet = descendingSet.descendingSet();
+		for(int score : ascendingSet ) {
+			System.out.println(score + " ");
+		}
 		
-		
+		System.out.println();
 		
 		
 		

@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D:/JavaWeb/jihy1218/java__1/src/라이브러리/activation.jar"/>
+	<classpathentry kind="lib" path="D:/JavaWeb/jihy1218/java__1/src/라이브러리/mail-1.4.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

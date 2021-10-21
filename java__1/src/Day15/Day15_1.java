@@ -11,7 +11,7 @@ public class Day15_1 {
 			// 1. ArrayList 2. Vector 3.LinkedList
 				// 1. 리스트명.add(객체명) : 해당 객체를 리스트에 저장
 				// 2. 리스트명.contains(객체명) : 해당 객체가 리스트에 존재 여부 ( true, false )
-				// 3. 리스트명.indexOf(객체명) ㅣ 해당 객체의 인덱스 번호
+				// 3. 리스트명.indexOf(객체명) : 해당 객체의 인덱스 번호
 				// 4. 리스트명.get(인덱스) : 해당 인덱스의 객체 호출
 				// 5. 리스트명.isEmpty() : 리스트가 비어 있는지 확인 ( true, false )
 				// 6. 리스트명.size() : 리스트내 객체수
