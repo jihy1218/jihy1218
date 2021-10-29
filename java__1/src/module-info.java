@@ -1,2 +1,2 @@
-module java1 {
+module java__1 {
 }

@@ -16,7 +16,7 @@
             <Image url="@loginmain.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="82.0" layoutY="117.0" prefHeight="520.0" prefWidth="319.0" style="-fx-background-color: #e3edee; -fx-background-radius: 13;">
+      <AnchorPane layoutX="82.0" layoutY="117.0" prefHeight="415.0" prefWidth="319.0" style="-fx-background-color: #e3edee; -fx-background-radius: 13;">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
@@ -28,9 +28,7 @@
             <TextField fx:id="txtemail" layoutX="40.0" layoutY="279.0" prefHeight="30.0" prefWidth="246.0" promptText="User Email" />
             <Label layoutX="133.0" layoutY="94.0" prefHeight="14.0" prefWidth="75.0" text="회원가입" />
             <Button fx:id="btnsignup" layoutX="40.0" layoutY="324.0" mnemonicParsing="false" onAction="#signup" prefHeight="35.0" prefWidth="238.0" style="-fx-background-color: #00ff0000; -fx-border-color: #152754; -fx-border-radius: 10;" text="회원가입" />
-            <Label fx:id="lblconfirm" layoutX="45.0" layoutY="379.0" prefHeight="31.0" prefWidth="238.0" text="로그인 실패! 동일한회원정보가 없습니다." textFill="#ee1212" />
-            <Label layoutX="45.0" layoutY="441.0" prefHeight="14.0" prefWidth="75.0" text="아이디찾기" textAlignment="CENTER" />
-            <Label layoutX="180.0" layoutY="441.0" text="비밀번호찾기" />
+            <Label fx:id="lblconfirm" layoutX="45.0" layoutY="368.0" prefHeight="31.0" prefWidth="238.0" text="로그인 실패! 동일한회원정보가 없습니다." textFill="#ee1212" />
             <Label fx:id="btnback" layoutX="237.0" layoutY="44.0" onMouseClicked="#back" prefHeight="27.0" prefWidth="70.0" text="뒤로가기" />
             <ImageView fitHeight="59.0" fitWidth="77.0" layoutX="133.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
