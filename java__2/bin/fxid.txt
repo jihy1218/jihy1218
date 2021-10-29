@@ -1,0 +1,42 @@
+	BoderPane : mainborderpane
+	AnchorPane : loginpane
+	Lable회원가입 : btnsignup
+		on mouse click : signup
+	Text Field : txtid
+	PasswordField : txtpassword
+	로그인버튼	button : btnlogin
+	경고메세지	Label : lblconfirm
+	Label : btnfind
+		on mouse click : findid
+	label비번찾기 : btnpasswordfind	
+		on mouse click :passwordfind
+회원가입페이지.fmxl
+	fxid정하기
+	AnchorPane : signuppane
+	Lable 뒤로가기 :  btnback
+		on mouse click : back
+	아이디입력창	txtid
+	비밀번호입력창	txtpassword
+	비밀번호확인창	txtpasswordconfirm
+	이름입력창	txtname
+	이메일입력창	txtemail
+	회원가입버튼 	btnsignup
+		on action signup
+	경고메시지 lblconfirm
+
+아이디 찾기 페이지.fmxl [이름, 이메일 동일]
+	fxid 정하기	AnchorPane : findidpane
+	이름 입력창  	Name Field: txtname
+	이메일 입력창 	Email Field : txtemail
+	찾기 버튼		btnfindid
+			on mouse click : findid
+	뒤로가기		
+	
+	
+	
+
+비밀번호 찾기 페이지.fmxl [아이디, 이메일 동일]
+	아이디 입력창 
+	이메일 입력창
+	찾기 버튼
+	뒤로가기
