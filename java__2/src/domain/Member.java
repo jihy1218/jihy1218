@@ -79,7 +79,7 @@ public class Member {
 	public static void sendmail(String tomail , String msg , int type) {
 		// 보낸사람 정보			// 받는사람 // 메일내용 // 메일타입
 		String fromemail = "kimji1218@naver.com";
-		String frompassword = "kjh1054113";
+		String frompassword = "";
 		
 		Properties properties = new Properties();
 		properties.put("mail.smtp.host", "smtp.naver.com");
