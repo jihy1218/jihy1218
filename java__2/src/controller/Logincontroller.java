@@ -3,6 +3,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.MemberDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -65,20 +66,24 @@ public class Logincontroller implements Initializable{
 
     @FXML
     void findid(MouseEvent event) {
-
+    	
+    	loadpage("findid");
     }
 
     @FXML
 	void findpassword(MouseEvent event) {
 
+    	loadpage("findpassword");
+    	
 	}
 
 	@FXML
 	void login(MouseEvent event) {
 
-		// txt 입력된 아이디와 패스워드 회원과 동일하면 로그인 성공
-		if(txtid.getText().equals("admin") && txtpassword.getText().equals("1234")) {
-			// 아이디와 패스워드가 동일하면 로그인 성공
+		// 1. Dao객체 메소드 호출 [ 
+		boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
+		
+		if(result) {
 			lblconfirm.setText("로그인성공");
 		}else {
 			lblconfirm.setText("로그인실패:동일한 회원정보가 없습니다.");

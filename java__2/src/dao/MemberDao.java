@@ -3,7 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import domain.Member;
 
@@ -13,7 +14,9 @@ public class MemberDao {
 		// 1. Connection : DB연결 인터페이스 [ DriverManager 클래스 ]
 		
 	// 1. 필드
-		private Connection connection;
+		private Connection connection;	// DB 연결 인터페이스 선언
+		private PreparedStatement preparedStatement;	// SQL 연결 인터페이스 선언
+		private ResultSet resultSet;	// 쿼리(검색결과) 연결 인터페이스 선언
 		// 현재 클래스내 객체 만들기
 		private static MemberDao memberDao = new MemberDao();
 	// 2. 생성자
@@ -39,7 +42,7 @@ public class MemberDao {
 			
 			try {
 				// 2. SQL -> DB연결
-				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+				preparedStatement = connection.prepareStatement(sql);
 				// 3. SQL 설정
 					preparedStatement.setString(1, member.getM_id());
 					preparedStatement.setString(2, member.getM_password() );
@@ -56,10 +59,75 @@ public class MemberDao {
 			return false;
 		}
 		// 2. 로그인 메소드
-		
+		public boolean login(String id , String password) {
+			// 1. SQL 작성
+			// 특정필드 : select 필드명 from 테이블명 where 조건
+			// 모든필드 : select *from 테이블명 where 조건
+			// * 조건 and : 이면서 면서 이고 그리고 조건1 and 조건2
+				// or : 이거나 거나 또는 하나라도 조건1 or 조건2
+			String sql = "select * from member where m_id=? and m_password=?";
+			// 2. SQL -> DB 연결
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				// 3.SQL 설정 [ 현재 메소드내 들어온 인수를 ? 대입 ]
+					preparedStatement.setString(1, id);
+					preparedStatement.setString(2, password);
+				// 4.SQL 실행 [Query : 쿼리 (검색 결과)
+					resultSet = preparedStatement.executeQuery();
+				// 5.SQL 결과
+					if(resultSet.next()) { // 쿼리결과에 다음내용이 있으면 true
+						return true;
+					}else {
+						return false;
+					}
+				}catch (Exception e) {}
+				return false;
+		}
 		// 3. 아이디찾기 메소드
-		
+		public String findid(String name , String email) {
+			// 1. SQL 작성
+			String sql = "select m_id from member where m_name=? and m_email=?";
+			// 2. SQL ->DB 연결
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				// 3. SQL설정
+					preparedStatement.setString(1, name);
+					preparedStatement.setString(2, email);
+				// 4. SQL 실행 
+					resultSet = preparedStatement.executeQuery();
+				// 5. SQL 실행 결과
+					if(resultSet.next()) {
+						// 검색 결과가 있으면
+						return resultSet.getString(1); // 쿼리(검색결과)내 첫번쨰 필드를 반환
+					}else {
+						return null;	// 검색 결과가 없으면
+					}	
+			} catch (Exception e) {}
+			return null;
+		}
 		// 4. 비밀번호찾기 메소드
+		public String findpassword(String id, String email) {
+			// 1. SQL 작성
+			String sql = "select m_password from member where m_id=? and m_email=?";
+			// 2. SQL -> DB 연결
+			try {	
+				preparedStatement = connection.prepareStatement(sql);
+				// 3. SQL 설정
+					preparedStatement.setString(1, id);
+					preparedStatement.setString(2, email);
+				// 4. SQL 실행
+					if(resultSet.next()) {
+						return resultSet.getString(2);
+					}
+				
+				
+				
+			} catch (Exception e) {
+				
+			}
+			
+			return null;
+		}
 		
 		// 5. 회원수정 메소드
 		

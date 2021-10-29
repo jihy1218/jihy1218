@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Properties;
+
 public class Member {
 
 	// 1. 필드
@@ -64,6 +66,14 @@ public class Member {
 		this.m_point = m_point;
 	}
 	
+	// email 전송 메소드
+	public static void sendmail(String tomail , String msg , int type) {
+		// 보낸사람 정보			// 받는사람 // 메일내용 // 메일타입
+		String fromemail = "kimji1218@naver.com";
+		String frompassword = "";
+		
+		Properties properties = new Properties();
+	}
 	
 	
 }
