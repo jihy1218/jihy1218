@@ -116,16 +116,14 @@ public class MemberDao {
 					preparedStatement.setString(1, id);
 					preparedStatement.setString(2, email);
 				// 4. SQL 실행
+					resultSet = preparedStatement.executeQuery();
+				// 5. SQL 결과
 					if(resultSet.next()) {
-						return resultSet.getString(2);
+						return resultSet.getString(1);
+					}else {
+						return null;
 					}
-				
-				
-				
-			} catch (Exception e) {
-				
-			}
-			
+			} catch (Exception e) {}
 			return null;
 		}
 		
