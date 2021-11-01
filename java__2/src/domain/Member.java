@@ -87,6 +87,7 @@ public class Member {
 		properties.put("mail.smtp.auth", true);
 		
 		Session session = Session.getDefaultInstance(properties, new Authenticator() {
+			// 익명구현객체
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(fromemail, frompassword);

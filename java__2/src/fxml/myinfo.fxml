@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Myinfocontroller">
+   <children>
+      <TableView editable="true" layoutX="199.0" layoutY="69.0" prefHeight="295.0" prefWidth="537.0" style="-fx-border-color: #ffffff;">
+        <columns>
+          <TableColumn prefWidth="120.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="C1" />
+          <TableColumn prefWidth="120.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="C2" />
+            <TableColumn prefWidth="165.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="C1" />
+            <TableColumn prefWidth="129.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="6.0" layoutY="204.0" prefHeight="38.0" prefWidth="58.0" text="ID" textFill="#6b3290">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font></Label>
+      <Label fx:id="lblid" layoutX="79.0" layoutY="204.0" prefHeight="38.0" prefWidth="58.0" text="id" />
+      <Label layoutX="6.0" layoutY="260.0" prefHeight="38.0" prefWidth="58.0" text="Name" textFill="#3832a8">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font></Label>
+      <Label fx:id="lblname" layoutX="79.0" layoutY="260.0" prefHeight="38.0" prefWidth="58.0" text="name" />
+      <Label layoutX="6.0" layoutY="314.0" prefHeight="38.0" prefWidth="58.0" text="Email" textFill="#21947d">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font></Label>
+      <Label fx:id="lblemail" layoutX="79.0" layoutY="314.0" prefHeight="38.0" prefWidth="118.0" text="email" />
+      <Label layoutX="199.0" layoutY="31.0" prefHeight="38.0" prefWidth="136.0" text="My Community">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="199.0" layoutY="407.0" prefHeight="289.0" prefWidth="537.0" style="-fx-border-color: #ffffff;">
+         <columns>
+            <TableColumn prefWidth="72.0" style="-fx-background-color: #ffffff;" text="Num" />
+            <TableColumn prefWidth="128.0" style="-fx-background-color: #ffffff;" text="Name" />
+            <TableColumn prefWidth="94.0" style="-fx-background-color: #ffffff;" text="Brand" />
+            <TableColumn prefWidth="130.0" style="-fx-background-color: #ffffff;" text="Category" />
+            <TableColumn prefWidth="111.0" style="-fx-background-color: #ffffff;" text="Price" />
+         </columns>
+      </TableView>
+      <Label layoutX="199.0" layoutY="369.0" prefHeight="38.0" prefWidth="136.0" text="My Products">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnupdate" layoutX="13.0" layoutY="430.0" mnemonicParsing="false" onAction="#update" prefHeight="38.0" prefWidth="168.0" style="-fx-border-color: #bd85ea;" text="회원수정">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button fx:id="btndelete" layoutX="13.0" layoutY="476.0" mnemonicParsing="false" onAction="#delete" prefHeight="38.0" prefWidth="168.0" style="-fx-border-color: #bd85ea;" text="회원탈퇴">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Line endX="67.0" layoutX="103.0" layoutY="160.0" startX="-100.0" />
+      <Label layoutX="20.0" layoutY="50.0" prefHeight="47.0" prefWidth="81.0" text="My" textFill="#3e9e83">
+         <font>
+            <Font name="Kristen ITC" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="97.0" prefHeight="47.0" prefWidth="158.0" text="Information" textFill="#bd6ee1">
+         <font>
+            <Font name="Kristen ITC" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="364.0" prefHeight="38.0" prefWidth="58.0" text="Point" textFill="#f5872c">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblpoint" layoutX="82.0" layoutY="364.0" prefHeight="38.0" prefWidth="58.0" text="point" />
+      <ImageView fitHeight="164.0" fitWidth="158.0" layoutX="18.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -20,7 +20,7 @@ public class Appstart extends Application{
 			stage.setTitle("로그인"); // 스테이지 이름
 			// 스테이지 아이콘
 				// 1. 이미지 불러오기
-				Image image = new Image("file:D:/JavaWeb/java__2/src/fxml/icon2.png");
+				Image image = new Image("file:D:/JavaWeb/jihy1218/java__2/src/fxml/icon2.png");
 				stage.getIcons().add(image);
 		stage.show();
 	}

@@ -1,4 +1,4 @@
-	BoderPane : mainborderpane
+	BorderPane : mainborderpane
 	AnchorPane : loginpane
 	Lable회원가입 : btnsignup
 		on mouse click : signup
@@ -40,3 +40,37 @@
 	이메일 입력창
 	찾기 버튼
 	뒤로가기
+
+메인페이지 fxml
+	BorderPane : mainpageborderpane
+	왼족 아크로펜 : lp
+	중간 : cp
+	label : loginid
+	홈버튼 : btnhome 		home
+	프로덕트 : btnproduct	product
+	커뮤니티 : btncommunity community
+	채팅버튼 : btnchattng 	chatting
+	인포버튼 : btnmyinfo 	myinfo
+	로그아웃 : btnlogout 	logout
+	
+	
+myinfo페이지 fxml
+	id창 : lblid
+	name창 : lblname
+	email창 : lblemail
+	회원수정 : btnupdate	update
+	회원탈퇴 : btndelete  delete
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
