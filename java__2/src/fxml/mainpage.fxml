@@ -10,9 +10,9 @@
 
 <BorderPane fx:id="mainpageborderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Mainpagecontroller">
    <left>
-      <AnchorPane fx:id="lp" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="lp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e3edee;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnhome" layoutX="-15.0" layoutY="297.0" mnemonicParsing="false" onAction="#home" prefHeight="63.0" prefWidth="216.0" style="-fx-background-color: #ffffff;" text="Home">
+            <Button fx:id="btnhome" layoutX="-42.0" layoutY="273.0" mnemonicParsing="false" onAction="#home" prefHeight="63.0" prefWidth="243.0" style="-fx-background-color: #ffffff;" text="Home">
                <graphic>
                   <ImageView fitHeight="55.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -20,24 +20,47 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btncommunity" layoutY="429.0" mnemonicParsing="false" onAction="#community" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" text="Community" />
-            <Button fx:id="btnchattng" layoutY="490.0" mnemonicParsing="false" onAction="#chatting" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" text="Chatting" />
-            <Button fx:id="btnmyinfo" layoutY="553.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" text="My Info" />
-            <Button fx:id="btnlogout" layoutY="619.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" text="Logout" />
-            <Button fx:id="btnproduct" layoutX="4.0" layoutY="367.0" mnemonicParsing="false" onAction="#product" prefHeight="56.0" prefWidth="197.0" style="-fx-background-color: #ffffff;" text="Products" />
-            <Label layoutX="15.0" layoutY="171.0" prefHeight="47.0" prefWidth="144.0" text="welcome" textFill="#e16b6b">
-               <font>
-                  <Font name="Kristen ITC" size="30.0" />
-               </font></Label>
-            <Label fx:id="lblloginid" layoutX="46.0" layoutY="218.0" prefHeight="37.0" prefWidth="83.0" text="loginid">
+            <Button fx:id="btnproduct" layoutX="-37.0" layoutY="342.0" mnemonicParsing="false" onAction="#product" prefHeight="56.0" prefWidth="238.0" style="-fx-background-color: #ffffff;" text="Products">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+            <Button fx:id="btncommunity" layoutX="-27.0" layoutY="405.0" mnemonicParsing="false" onAction="#community" prefHeight="56.0" prefWidth="229.0" style="-fx-background-color: #ffffff;" text="Community">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+            <Button fx:id="btnchattng" layoutX="-37.0" layoutY="467.0" mnemonicParsing="false" onAction="#chatting" prefHeight="56.0" prefWidth="239.0" style="-fx-background-color: #ffffff;" text="Chatting">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@098-message.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnmyinfo" layoutX="-38.0" layoutY="529.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="56.0" prefWidth="240.0" style="-fx-background-color: #ffffff;" text="My Info">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@011-user.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnlogout" layoutX="-46.0" layoutY="592.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="248.0" style="-fx-background-color: #ffffff;" text="Logout">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+            <Label fx:id="lblloginid" layoutX="52.0" layoutY="203.0" prefHeight="37.0" prefWidth="83.0" text="loginid">
                <font>
                   <Font name="Kristen ITC" size="18.0" />
                </font></Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="249.0" fitWidth="203.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@MY.png" />
+                  <Image url="@Community%20Travel.png" />
                </image>
             </ImageView>
+            <Label layoutX="21.0" layoutY="156.0" prefHeight="47.0" prefWidth="144.0" text="welcome" textFill="#e16b6b">
+               <font>
+                  <Font name="Kristen ITC" size="30.0" />
+               </font></Label>
          </children>
       </AnchorPane>
    </left>

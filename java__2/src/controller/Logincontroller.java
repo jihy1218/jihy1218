@@ -55,7 +55,7 @@ public class Logincontroller implements Initializable{
     private Label btnpasswordfind;
 
     @FXML
-    private Label btnsignup;
+    private Button btnsignup;
 
     @FXML
     private Label lblconfirm;
