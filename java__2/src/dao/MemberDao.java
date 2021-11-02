@@ -127,15 +127,22 @@ public class MemberDao {
 			return null;
 		}
 		
-		// 5. 회원수정 메소드
-//		public Member memberupdate(String loginid) {
-//			// 1. SQL 작성
-//			String sql = "sele"
-//			// 2. SQL -> DB연결
-//			// 3. SQL 설정
-//			// 4. SQL 실행
-//			// 5. SQL 결과
-//		}
+		 // 5. 회원수정 메소드
+		public boolean update(String id , String name , String email) {
+			// 1. SQL 작성
+			String sql = "update member set m_name=? , m_email=? where m_id = ?";
+						// update 테이블ㄹ명 set 변경필드=값 , 변경필드2 = 값2 where 조건
+			// 2. SQL -> DB연결
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, name);
+				preparedStatement.setString(2, email);
+				preparedStatement.setString(3, id);
+				preparedStatement.executeUpdate();
+				return true;
+			} catch (Exception e) {}
+			return false;
+		}
 		// 6. 회원탈퇴 메소드
 		public boolean delete(String loginid) {
 			// 1. SQL 작성
@@ -172,15 +179,94 @@ public class MemberDao {
 			} catch (Exception e) {}
 			return null; // db오류
 		}
+		// 8. 아이디 체크 메소드
+		public boolean idcheck(String id) {
+			String sql = "select m_id from member where m_id=?";
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, id);
+				resultSet = preparedStatement.executeQuery();
+				if(resultSet.next()) {return true;}	// 현재 아이디가 존재하면
+				else {return false;}		// 현재 아이디가 존재하지 않으면
+			} catch (Exception e) {}
+			return true;
+		}
+		
+		// 9. 포인트 증감 메소드
+		public boolean pointupdate (String id, int point) {
+			String sql = "update member set m_point = m_point + ? where m_id=?";
+						// update 테이블명 set 변경할필드명 = 변경할값 where 조건
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setInt(1, point);
+				preparedStatement.setString(2, id);
+				preparedStatement.executeUpdate();
+				return true;
+			} catch (Exception e) {}
+			return false;
+			
+		}
 	
 	
 	
 	
+		/*	 게시판 설계
+			// 1. DB설계
+					// 게시물번호 				int
+					// 게시물제목 				String
+					 * 게시물내용				String
+					 * 게시물작성자[로그인된 id]	String
+					 * 게시물 작성일[자동 주입]	String
+					 * 게시물 조회수			int
+					 
+			// 2. DTO 설계
+			// 3. DAO 설계
+			// 4. FXML 작성
+			// 5. Controller 작성
+			// 6. DAO 작성
+		
+			// DDL : 정의어
+		 		* create table DB명 테이블명
+		 		* 	필드명1 자료형 속성,
+		 		*	필드명2 자료형 속성,
+		 		*	필드명3 자료형 속성
+		 		Drop 삭제
+		 		Alter
+		 	*자료형
+		 	*	int : 정수형
+		 	*	varchar : 문자열	(바이트)
+		 	*	timestamp : 날짜/시간 (4바이트)
+		 	
+			속성
+				primary key : 기본키[pk]
+				auto increment : 자동번호 주입[ai]
+				not null : null값 제외
+				default : 초기값
+			함수
+				now : 현재날짜/시간
+				회원 					게시판			댓글
+				회원번호				게시물번호			댓글번호
+				회원아이디				게시물제목			댓글내용
+				회원비밀번호			게시물내용			댓글작성자
+				회원이름				회원번호			댓글작성일
+									게시물작성자			
+				회원이메일				게시물작성일		게시물번호
+				회원포인트				게시물조회수
+				PK					FK				FK
+				
+				회원번호[PK]--------->회원번호[FK]
+									게시물번호[PK]---->게시물번호[FK]
+				pk : 식별 가능한 키 [ 식별 필드 : 중복x null x ]
+						예) 주민등록번호 , 사번, 학번, 카드번호 , 사업장번호 , 주소 등
+						다른 테이블과 연결시 사용되는 식별키 [ 대부분1]
+				fk : pk와 연결된 필드
+					* 외래키
+					* 다른테이블에 pk와 연결된 필드 대부분[M]
+					* 
+					
+			
 	
-	
-	
-	
-	
+	*/
 	
 	
 	

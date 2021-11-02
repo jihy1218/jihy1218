@@ -12,31 +12,34 @@
    <left>
       <AnchorPane fx:id="lp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e3edee;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnhome" layoutX="-42.0" layoutY="273.0" mnemonicParsing="false" onAction="#home" prefHeight="63.0" prefWidth="243.0" style="-fx-background-color: #ffffff;" text="Home">
+            <Button fx:id="btnhome" layoutX="-43.0" layoutY="276.0" mnemonicParsing="false" onAction="#home" prefHeight="63.0" prefWidth="243.0" style="-fx-background-color: #e9fff2;" text="Home">
                <graphic>
                   <ImageView fitHeight="55.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@047-house.png" />
+                        <Image url="@036-plane.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnproduct" layoutX="-37.0" layoutY="342.0" mnemonicParsing="false" onAction="#product" prefHeight="56.0" prefWidth="238.0" style="-fx-background-color: #ffffff;" text="Products">
+            <Button fx:id="btnproduct" layoutX="-37.0" layoutY="344.0" mnemonicParsing="false" onAction="#product" prefHeight="56.0" prefWidth="238.0" style="-fx-background-color: #e9fff2;" text="Products">
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="btncommunity" layoutX="-27.0" layoutY="405.0" mnemonicParsing="false" onAction="#community" prefHeight="56.0" prefWidth="229.0" style="-fx-background-color: #ffffff;" text="Community">
-               <graphic>
-                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic></Button>
-            <Button fx:id="btnchattng" layoutX="-37.0" layoutY="467.0" mnemonicParsing="false" onAction="#chatting" prefHeight="56.0" prefWidth="239.0" style="-fx-background-color: #ffffff;" text="Chatting">
+            <Button fx:id="btncommunity" layoutX="-26.0" layoutY="405.0" mnemonicParsing="false" onAction="#community" prefHeight="56.0" prefWidth="229.0" style="-fx-background-color: #e9fff2;" text="Community">
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@098-message.png" />
+                        <Image url="@023-university.png" />
+                     </image></ImageView>
+               </graphic></Button>
+            <Button fx:id="btnchattng" layoutX="-37.0" layoutY="466.0" mnemonicParsing="false" onAction="#chatting" prefHeight="56.0" prefWidth="239.0" style="-fx-background-color: #e9fff2;" text="Chatting">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@018-message.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnmyinfo" layoutX="-38.0" layoutY="529.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="56.0" prefWidth="240.0" style="-fx-background-color: #ffffff;" text="My Info">
+            <Button fx:id="btnmyinfo" layoutX="-45.0" layoutY="527.0" mnemonicParsing="false" onAction="#myinfo" prefHeight="56.0" prefWidth="247.0" style="-fx-background-color: #e9fff2;" text="My Info">
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,9 +47,12 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnlogout" layoutX="-46.0" layoutY="592.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="248.0" style="-fx-background-color: #ffffff;" text="Logout">
+            <Button fx:id="btnlogout" layoutX="-46.0" layoutY="588.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="248.0" style="-fx-background-color: #e9fff2;" text="Logout">
                <graphic>
-                  <ImageView fitHeight="47.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="47.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logout.jpg" />
+                     </image></ImageView>
                </graphic></Button>
             <Label fx:id="lblloginid" layoutX="52.0" layoutY="203.0" prefHeight="37.0" prefWidth="83.0" text="loginid">
                <font>

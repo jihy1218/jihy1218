@@ -102,7 +102,7 @@ public class Myinfocontroller implements Initializable{
 
 	@FXML
 	void update(ActionEvent event) {
-
+		Mainpagecontroller.getinstance().loadpage("myinfoupdate");
 	}
 
 }

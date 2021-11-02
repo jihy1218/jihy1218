@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="796.0" style="-fx-background-color: #e3edee;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnback" layoutX="601.0" layoutY="61.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Back">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txttitle" disable="true" layoutX="73.0" layoutY="133.0" prefHeight="57.0" prefWidth="640.0" />
+      <TextArea fx:id="txtcontents" disable="true" layoutX="74.0" layoutY="197.0" prefHeight="285.0" prefWidth="640.0" />
+      <ImageView fitHeight="162.0" fitWidth="161.0" layoutX="45.0" layoutY="-31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../bin/fxml/Community%20Travel.png" />
+         </image>
+      </ImageView>
+      <Line endX="123.0" layoutX="285.0" layoutY="104.0" startX="-237.0" />
+      <Label layoutX="378.0" layoutY="40.0" prefHeight="57.0" prefWidth="114.0" text="View" textFill="#3e9e83">
+         <font>
+            <Font name="Kristen ITC" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="233.0" layoutY="45.0" prefHeight="47.0" prefWidth="158.0" text="Community" textFill="#bd6ee1">
+         <font>
+            <Font name="Kristen ITC" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="replylist" layoutX="73.0" layoutY="527.0" prefHeight="192.0" prefWidth="640.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="No." />
+          <TableColumn prefWidth="89.0" text="Write" />
+            <TableColumn prefWidth="395.0" text="Contents" />
+            <TableColumn text="date" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnreplywrite" layoutX="598.0" layoutY="491.0" mnemonicParsing="false" onAction="#replywrite" prefHeight="1.0" prefWidth="114.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Replywrite">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnupdate" layoutX="73.0" layoutY="493.0" mnemonicParsing="false" onAction="#update" prefHeight="1.0" prefWidth="114.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Update">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btndelete" layoutX="194.0" layoutY="492.0" mnemonicParsing="false" onAction="#delete" prefHeight="1.0" prefWidth="114.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Delete">
+         <font>
+            <Font name="Kristen ITC" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

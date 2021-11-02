@@ -77,6 +77,8 @@ public class Signupcontroller implements Initializable{
 			// 5. 이메일 길이 체크
 			if(txtemail.getText().length()<5 && !txtemail.getText().contains("@")) {lblconfirm.setText("이메일형식으로 입력해주십시오."); return;}
 		// 2. 중복체크
+			boolean idcheck = MemberDao.getMemberDao().idcheck(txtid.getText());
+			if(idcheck) { lblconfirm.setText("현재 사용중인 아이디입니다."); return;}
 		
 		// 3. 객체화
 		Member member = new Member(txtid.getText(), txtpassword.getText(), 

@@ -58,10 +58,35 @@ myinfo페이지 fxml
 	id창 : lblid
 	name창 : lblname
 	email창 : lblemail
+	포인트 : lblpoint
 	회원수정 : btnupdate	update
 	회원탈퇴 : btndelete  delete
 	
+회원수정.fxml
+	id창 : iblid
+	name창 : txtname
+	email창 : txtemail
+	포인트 : lblpoint
+	회원수정 : btnupdate	update
+	취소 : btncancel  cancel
 	
+커뮤니티게시판목록 . fxml
+	테이블뷰 : boardlist
+	등록버튼 : btnwrite
+		
+커뮤니티게시물쓰기.fxml
+	제목입력창 : txttitle
+	내용입력창 : txtcontents
+	등록버튼 : btnwrite	write
+	취소버튼 : btncancel	cancel
+게시물 상세 페이지.fxml
+	제목입력창 : txttitle
+	내용입령창 : txtcontents
+	댓글등록버튼 : btnreplywrite	replywrite
+	뒤로가기	: btnback			back
+	수정버튼 	: btnupdate			update
+	삭제하기	: btndelete			delete
+	테이블뷰	: replylist
 	
 	
 	

@@ -88,7 +88,7 @@ public class Mainpagecontroller implements Initializable {
 
 	@FXML
 	void community(ActionEvent event) {
-
+		loadpage("boardlist");
 	}
 
 	@FXML

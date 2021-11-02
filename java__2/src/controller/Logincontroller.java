@@ -1,6 +1,6 @@
 package controller;
 
-import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -90,9 +92,15 @@ public class Logincontroller implements Initializable{
 
 		// 1. Dao객체 메소드 호출 [ 
 		boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
-		
+		MemberDao.getMemberDao().pointupdate(txtid.getText(), 10);
 		if(result) {
-			lblconfirm.setText("로그인성공");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setHeaderText("로그인되었습니다.");
+			alert.setTitle("알림");
+			alert.setContentText(" 10포인트 적립! ");
+			alert.showAndWait();
+			
+			
 			// 기존스테이지 끄기
 			btnlogin.getScene().getWindow().hide();		// 화면숨기기			
 			// 메인페이지 스테이지
