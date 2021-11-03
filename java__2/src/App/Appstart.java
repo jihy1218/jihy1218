@@ -14,7 +14,7 @@ public class Appstart extends Application{
 	public void start(Stage stage) throws Exception {
 		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
 		// 폰트불어오기
-		Font.loadFont(getClass().getResourceAsStream("KOTRA_TTF"), 14);
+		// Font.loadFont(getClass().getResourceAsStream("KOTRA_TTF"), 14);
 		// *{
 		//	-fx-font-family:"KOTRA_TTF";
 		//} 스타일시트에 이렇게 적용하면됨
@@ -26,7 +26,7 @@ public class Appstart extends Application{
 			stage.setTitle("로그인"); // 스테이지 이름
 			// 스테이지 아이콘
 				// 1. 이미지 불러오기
-				Image image = new Image("file:D:/JavaWeb/jihy1218/java__2/src/fxml/icon2.png");
+				Image image = new Image("file:D:/JavaWeb/jihy1218/java__2/src/fxml/Community Travel.png");
 				stage.getIcons().add(image);
 		stage.show();
 	}

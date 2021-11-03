@@ -40,10 +40,10 @@
       </Label>
       <TableView fx:id="replylist" layoutX="76.0" layoutY="570.0" prefHeight="150.0" prefWidth="640.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="No." />
-          <TableColumn prefWidth="89.0" text="Write" />
-            <TableColumn prefWidth="395.0" text="Contents" />
-            <TableColumn text="date" />
+          <TableColumn prefWidth="63.0" text="No." />
+          <TableColumn prefWidth="390.0" text="Contents" />
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="Write" />
+            <TableColumn prefWidth="104.0" text="date" />
         </columns>
       </TableView>
       <Button fx:id="btnreplywrite" layoutX="598.0" layoutY="528.0" mnemonicParsing="false" onAction="#replywrite" prefHeight="1.0" prefWidth="114.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Replywrite">

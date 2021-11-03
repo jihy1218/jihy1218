@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import dao.BoardDao;
 import domain.Board;
 import domain.Reply;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,16 +16,19 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Boardviewcontroller implements Initializable {
 
 	Board board = Boardlistcontroller.board;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
+		// 댓글
+		replytableload();
 			// DB 조회수증가
 			BoardDao.getBoardDao().viewupdate(board.getB_no());
 		
@@ -61,8 +65,26 @@ public class Boardviewcontroller implements Initializable {
     private Button btnupdate;
 
     @FXML
-    private TableView<?> replylist;
+    private TableView<Reply> replylist;
 
+    // 테이블 로드 메소드
+    public void replytableload() {
+    	ObservableList<Reply> replys = BoardDao.getBoardDao().replylist(board.getB_no());
+    	
+    	TableColumn tc = replylist.getColumns().get(0);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("r_no"));
+    	
+    	tc = replylist.getColumns().get(1);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("r_contents"));
+    	
+    	tc = replylist.getColumns().get(2);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("r_write"));
+    	
+    	tc = replylist.getColumns().get(3);
+    	tc.setCellValueFactory(new PropertyValueFactory<>("r_date"));
+    	
+    	replylist.setItems(replys);
+    }
     @FXML
     private TextArea txtreply;
     
@@ -97,6 +119,10 @@ public class Boardviewcontroller implements Initializable {
     		Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setHeaderText("댓글등록완료");
     		alert.showAndWait();
+    		// 댓글 리스트 로드
+    		replytableload();
+    		// 댓글 초기화
+    		txtreply.setText("");
     	}
     }
     
