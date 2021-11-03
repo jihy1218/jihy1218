@@ -86,6 +86,7 @@ myinfo페이지 fxml
 	뒤로가기	: btnback			back
 	수정버튼 	: btnupdate			update
 	삭제하기	: btndelete			delete
+	댓글창 	: txtreply
 	테이블뷰	: replylist
 	
 	

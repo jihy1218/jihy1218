@@ -8,33 +8,37 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="signuppane" prefHeight="743.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Signupcontroller">
    <children>
       <ImageView fitHeight="759.0" fitWidth="1013.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@loginmain.jpg" />
+            <Image url="@homepic2.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="82.0" layoutY="117.0" prefHeight="415.0" prefWidth="319.0" style="-fx-background-color: #e3edee; -fx-background-radius: 13;">
+      <AnchorPane layoutX="74.0" layoutY="140.0" prefHeight="361.0" prefWidth="319.0" style="-fx-background-color: #e3edee; -fx-background-radius: 13;">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
          <children>
-            <TextField fx:id="txtid" layoutX="41.0" layoutY="120.0" prefHeight="30.0" prefWidth="246.0" promptText="User ID" />
-            <PasswordField fx:id="txtpassword" layoutX="41.0" layoutY="159.0" prefHeight="30.0" prefWidth="246.0" promptText="user password" />
-            <PasswordField fx:id="txtpasswordconfirm" layoutX="40.0" layoutY="199.0" prefHeight="30.0" prefWidth="246.0" promptText="User password confirm" />
-            <TextField fx:id="txtname" layoutX="41.0" layoutY="239.0" prefHeight="30.0" prefWidth="246.0" promptText="User name" />
-            <TextField fx:id="txtemail" layoutX="40.0" layoutY="279.0" prefHeight="30.0" prefWidth="246.0" promptText="User Email" />
-            <Label layoutX="133.0" layoutY="94.0" prefHeight="14.0" prefWidth="75.0" text="회원가입" />
-            <Button fx:id="btnsignup" layoutX="40.0" layoutY="324.0" mnemonicParsing="false" onAction="#signup" prefHeight="35.0" prefWidth="238.0" style="-fx-background-color: #00ff0000; -fx-border-color: #152754; -fx-border-radius: 10;" text="회원가입" />
-            <Label fx:id="lblconfirm" layoutX="45.0" layoutY="368.0" prefHeight="31.0" prefWidth="238.0" text="로그인 실패! 동일한회원정보가 없습니다." textFill="#ee1212" />
-            <Label fx:id="btnback" layoutX="237.0" layoutY="44.0" onMouseClicked="#back" prefHeight="27.0" prefWidth="70.0" text="뒤로가기" />
-            <ImageView fitHeight="59.0" fitWidth="77.0" layoutX="133.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="txtid" layoutX="41.0" layoutY="111.0" prefHeight="30.0" prefWidth="246.0" promptText="User ID" />
+            <PasswordField fx:id="txtpassword" layoutX="41.0" layoutY="146.0" prefHeight="30.0" prefWidth="246.0" promptText="user password" />
+            <PasswordField fx:id="txtpasswordconfirm" layoutX="40.0" layoutY="181.0" prefHeight="30.0" prefWidth="246.0" promptText="User password confirm" />
+            <TextField fx:id="txtname" layoutX="40.0" layoutY="216.0" prefHeight="30.0" prefWidth="246.0" promptText="User name" />
+            <TextField fx:id="txtemail" layoutX="40.0" layoutY="251.0" prefHeight="30.0" prefWidth="246.0" promptText="User Email" />
+            <Label layoutX="122.0" layoutY="25.0" prefHeight="66.0" prefWidth="75.0" text="Signup" textFill="#8c52ff">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font></Label>
+            <Button fx:id="btnsignup" layoutX="161.0" layoutY="289.0" mnemonicParsing="false" onAction="#signup" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #00ff0000; -fx-border-color: #152754; -fx-border-radius: 10;" text="회원가입" />
+            <Label fx:id="lblconfirm" layoutX="45.0" layoutY="329.0" prefHeight="31.0" prefWidth="238.0" text="로그인 실패! 동일한회원정보가 없습니다." textFill="#ee1212" />
+            <ImageView fitHeight="108.0" fitWidth="107.0" layoutX="13.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@KakaoTalk_20211028_135245810.png" />
+                  <Image url="@Community%20Travel.png" />
                </image>
             </ImageView>
+            <Button fx:id="btnback" layoutX="42.0" layoutY="289.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #00ff0000; -fx-border-color: #152754; -fx-border-radius: 10;" text="뒤로가기" />
          </children>
       </AnchorPane>
    </children>

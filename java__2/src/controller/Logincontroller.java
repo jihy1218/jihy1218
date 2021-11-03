@@ -97,7 +97,7 @@ public class Logincontroller implements Initializable{
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setHeaderText("로그인되었습니다.");
 			alert.setTitle("알림");
-			alert.setContentText(" 10포인트 적립! ");
+			alert.setContentText(" 10포인트 적립되었습니다! ");
 			alert.showAndWait();
 			
 			

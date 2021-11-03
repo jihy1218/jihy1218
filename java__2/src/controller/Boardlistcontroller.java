@@ -41,7 +41,7 @@ public class Boardlistcontroller implements Initializable {
 		tc.setCellValueFactory(new PropertyValueFactory<>("b_view"));
 		
 		
-		// 3. 테이블뷰에 리스트 설정
+		// 3. 테이블뷰에 리스트 넣기
 		boardlist.setItems(boards);
 		
 		

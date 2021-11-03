@@ -25,7 +25,7 @@ public class Findidcontroller implements Initializable{
 	}
 	
     @FXML
-    private Label btnback;
+    private Button btnback;
 
     @FXML
     private Button btnfindid;

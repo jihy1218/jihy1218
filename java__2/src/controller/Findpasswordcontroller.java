@@ -25,7 +25,7 @@ public class Findpasswordcontroller implements Initializable{
 	}
 
 	@FXML
-	private Label btnback;
+	private Button btnback;
 
 	@FXML
 	private Button btnfindpassword;

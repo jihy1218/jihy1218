@@ -21,32 +21,32 @@
                   <Image url="@background.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="259.0" layoutY="198.0" prefHeight="337.0" prefWidth="330.0" style="-fx-background-color: #e3edee; -fx-background-radius: 13;">
+            <AnchorPane layoutX="259.0" layoutY="198.0" prefHeight="282.0" prefWidth="330.0" style="-fx-background-color: #e3edee; -fx-background-radius: 13;">
                <children>
-                  <Label fx:id="btnpasswordfind" layoutX="159.0" layoutY="268.0" onMouseClicked="#findpassword" text="FindPassword">
+                  <Label fx:id="btnpasswordfind" layoutX="153.0" layoutY="230.0" onMouseClicked="#findpassword" text="FindPassword">
                      <font>
                         <Font name="Kristen ITC" size="20.0" />
                      </font></Label>
-                  <TextField fx:id="txtid" layoutX="148.0" layoutY="62.0" prefHeight="29.0" prefWidth="158.0" promptText="UserID" />
-                  <PasswordField fx:id="txtpassword" layoutX="148.0" layoutY="99.0" prefHeight="31.0" prefWidth="157.0" promptText="user password" />
-                  <Button fx:id="btnlogin" layoutX="153.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="53.0" prefWidth="150.0" style="-fx-background-color: #00ff0000; -fx-border-color: #152754; -fx-border-radius: 10;" text="로그인">
+                  <TextField fx:id="txtid" layoutX="148.0" layoutY="33.0" prefHeight="29.0" prefWidth="158.0" promptText="UserID" />
+                  <PasswordField fx:id="txtpassword" layoutX="148.0" layoutY="70.0" prefHeight="31.0" prefWidth="157.0" promptText="user password" />
+                  <Button fx:id="btnlogin" layoutX="153.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="53.0" prefWidth="150.0" style="-fx-background-color: #00ff0000; -fx-border-color: #152754; -fx-border-radius: 10;" text="로그인">
                      <font>
                         <Font name="Kristen ITC" size="12.0" />
                      </font></Button>
-                  <Label fx:id="lblconfirm" layoutX="65.0" layoutY="208.0" prefHeight="31.0" prefWidth="238.0" text="로그인 실패! 동일한회원정보가 없습니다." textFill="#ee1212">
+                  <Label fx:id="lblconfirm" layoutX="49.0" layoutY="192.0" prefHeight="31.0" prefWidth="238.0" text="로그인 실패! 동일한회원정보가 없습니다." textFill="#ee1212">
                      <font>
-                        <Font name="HYPost-Medium" size="12.0" />
+                        <Font name="Kristen ITC" size="12.0" />
                      </font></Label>
-                  <Label fx:id="btnfind" layoutX="56.0" layoutY="269.0" onMouseClicked="#findid" prefHeight="32.0" prefWidth="66.0" text="FindId" textAlignment="CENTER">
+                  <Label fx:id="btnfind" layoutX="43.0" layoutY="230.0" onMouseClicked="#findid" prefHeight="32.0" prefWidth="66.0" text="FindId" textAlignment="CENTER">
                      <font>
                         <Font name="Kristen ITC" size="20.0" />
                      </font></Label>
-                  <ImageView fitHeight="151.0" fitWidth="128.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="151.0" fitWidth="128.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Community%20Travel.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnsignup" layoutX="15.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#signup" prefHeight="54.0" prefWidth="134.0" style="-fx-background-color: #e3edee; -fx-border-radius: 10; -fx-border-color: #152754;" text="회원가입" />
+                  <Button fx:id="btnsignup" layoutX="15.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#signup" prefHeight="54.0" prefWidth="134.0" style="-fx-background-color: #e3edee; -fx-border-radius: 10; -fx-border-color: #152754;" text="회원가입" />
                </children>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
