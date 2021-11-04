@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="796.0" style="-fx-background-color: #e3edee;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Productupdatecontroller">
+   <children>
+      <Label layoutX="149.0" layoutY="103.0" prefHeight="57.0" prefWidth="142.0" text="Update" textFill="#3e9e83">
+         <font>
+            <Font name="Kristen ITC" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="113.0" prefHeight="47.0" prefWidth="158.0" text="Product" textFill="#bd6ee1">
+         <font>
+            <Font name="Kristen ITC" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="114.0" fitWidth="133.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Community%20Travel.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnupdate" layoutX="177.0" layoutY="564.0" mnemonicParsing="false" onAction="#update" prefHeight="37.0" prefWidth="324.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Update">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtpname" layoutX="177.0" layoutY="185.0" prefHeight="37.0" prefWidth="324.0" />
+      <Label layoutX="68.0" layoutY="186.0" prefHeight="37.0" prefWidth="74.0" text="제품명" />
+      <Label layoutX="68.0" layoutY="223.0" prefHeight="37.0" prefWidth="74.0" text="제품설명" />
+      <TextArea fx:id="txtpcontents" layoutX="177.0" layoutY="229.0" prefHeight="134.0" prefWidth="324.0" />
+      <Label layoutX="68.0" layoutY="363.0" prefHeight="37.0" prefWidth="74.0" text="카테고리" />
+      <RadioButton fx:id="opt_1" layoutX="177.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="74.0" text="호텔양도">
+         <toggleGroup>
+            <ToggleGroup fx:id="category" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="opt_2" layoutX="262.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" text="렌트카 양도" toggleGroup="$category" />
+      <RadioButton fx:id="opt_3" layoutX="357.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" text="항공권양도" toggleGroup="$category" />
+      <RadioButton fx:id="opt_4" layoutX="448.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="ACC" toggleGroup="$category" />
+      <Label layoutX="68.0" layoutY="397.0" prefHeight="37.0" prefWidth="36.0" text="가격" />
+      <TextField fx:id="txtprice" layoutX="177.0" layoutY="397.0" prefHeight="37.0" prefWidth="324.0" />
+      <Label layoutX="68.0" layoutY="443.0" prefHeight="47.0" prefWidth="66.0" text="제품이미지" />
+      <Label fx:id="lblimgpath" layoutX="173.0" layoutY="490.0" prefHeight="47.0" prefWidth="324.0" text="제품이미지" textFill="#211351" />
+      <Button fx:id="btnimgadd" layoutX="173.0" layoutY="449.0" mnemonicParsing="false" onAction="#imgadd" prefHeight="36.0" prefWidth="184.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="이미지 등록">
+         <font>
+            <Font name="Kristen ITC" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="pimg" fitHeight="300.0" fitWidth="240.0" layoutX="525.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btncancel" layoutX="177.0" layoutY="629.0" mnemonicParsing="false" onAction="#cancel" prefHeight="37.0" prefWidth="324.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="Cancel">
+         <font>
+            <Font name="Kristen ITC" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -130,7 +130,6 @@ public class BoardDao {
 	
 		// 8. 댓글출력 메소드
 	public ObservableList<Reply> replylist(int b_no) {
-		
 		ObservableList<Reply> replys = FXCollections.observableArrayList();
 		String sql = "select * from reply where b_no = ? order by r_no desc";
 		try {
@@ -138,7 +137,8 @@ public class BoardDao {
 			preparedStatement.setInt(1, b_no);
 			resultSet= preparedStatement.executeQuery();
 			
-			while(resultSet.next()) {
+			while(resultSet.next()) {	// 다음레코드가 없을때까지
+				// 댓글 레코드[한줄]씩 객체화
 				Reply reply = new Reply(resultSet.getInt(1), 
 										resultSet.getString(2),
 										resultSet.getString(3),

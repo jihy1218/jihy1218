@@ -135,6 +135,6 @@ public class Mainpagecontroller implements Initializable {
 
 	@FXML
 	void product(ActionEvent event) {
-
+		loadpage("productlist");
 	}
 }

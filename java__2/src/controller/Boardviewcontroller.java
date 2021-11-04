@@ -35,7 +35,7 @@ public class Boardviewcontroller implements Initializable {
 		txttitle.setText(board.getB_title());
 		txtcontents.setText(board.getB_contents());
 		lblwrite.setText("작성자 : "+board.getB_write());
-		lbldate.setText("Date : "+ board.getB_date().split(" ")[0]);
+		lbldate.setText("Date : "+ board.getB_date().split(" ")[0]);	// 0을 넣으면 공백기준 첫번째인 날짜가 나옴
 		lblview.setText("조회수 : "+ (board.getB_view()+1));
 		if(!Mainpagecontroller.getinstance().getloginid().equals(board.getB_write())) {
 			// 게시물 작성자와 로그인된 작성자가 다를경우

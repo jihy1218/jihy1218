@@ -89,8 +89,44 @@ myinfo페이지 fxml
 	댓글창 	: txtreply
 	테이블뷰	: replylist
 	
+제품리스트.fxml
+	테이블뷰 : productlist
+	수정버튼 : btnupdate		update
+	삭제버튼 : btndelete		delete
+	등록버튼 : btnregister		register
+	이미지뷰 : pimg
+ 	제품명레이블 : lblpname
+ 	설명레이블 : lblpcontents
+ 	회원레이블 : lblmid
+ 	가격레이블 : lblprice
 	
-	
+제품등록페이지.fxml
+	이미지뷰 :	pimg
+	이미지등록버튼	: btnimgadd	imgadd
+	이미지경로 		: lblimgpath
+	등록버튼 		: btnregister		register
+	취소버튼 		: btncancel 		cancel
+	제품명입력창 	: txtpname
+	제품설명입력창	: txtpcontents
+	가격 			: txtprice
+	단추1			: opt_1
+	단추2 		: opt_2
+	단추3   		: opt_3
+	단추4        	: opt_4
+
+제품 수정 페이지
+	이미지뷰 :	pimg
+	이미지등록버튼	: btnimgadd	imgadd
+	이미지경로 		: lblimgpath
+	수정버튼 		: btnupdate		update
+	취소버튼 		: btncancel 		cancel
+	제품명입력창 	: txtpname
+	제품설명입력창	: txtpcontents
+	가격 			: txtprice
+	단추1			: opt_1
+	단추2 		: opt_2
+	단추3   		: opt_3
+	단추4        	: opt_4
 	
 	
 	
