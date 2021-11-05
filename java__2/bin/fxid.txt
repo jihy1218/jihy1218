@@ -99,6 +99,7 @@ myinfo페이지 fxml
  	설명레이블 : lblpcontents
  	회원레이블 : lblmid
  	가격레이블 : lblprice
+ 	상태버튼 : btnactivation	activation
 	
 제품등록페이지.fxml
 	이미지뷰 :	pimg

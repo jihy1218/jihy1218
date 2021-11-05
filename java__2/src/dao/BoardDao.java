@@ -69,11 +69,7 @@ public class BoardDao {
 							resultSet.getInt(6));
 				boards.add(board);
 			}
-		} catch (Exception e) {}
-		return boards;
-		
-		
-		
+		} catch (Exception e) {} return boards;
 	}
 		// 3. 게시물 삭제 메소드
 	public boolean delete(int b_no) {
@@ -150,8 +146,29 @@ public class BoardDao {
 		} catch (Exception e) {}
 		return replys;
 	}
-	
-	
+		// 9. 로그인된 회원의 게시물 출력
+	public ObservableList<Board> myboardlist(String id){
+		// 리스트 선언
+		ObservableList<Board> boards = FXCollections.observableArrayList();
+		String sql = "select * from board where b_write = ? order by b_no desc";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, id);
+			resultSet = preparedStatement.executeQuery();
+			// 2. 검색된[쿼리] 레코드이 하나씩 객체화
+			while(resultSet.next()) {
+					//쿼리 결과내 레코드가 없을떄 까지 반복
+				Board board = new Board(
+							resultSet.getInt(1),
+							resultSet.getString(2),
+							resultSet.getString(3),
+							resultSet.getString(4),
+							resultSet.getString(5),
+							resultSet.getInt(6));
+				boards.add(board);
+			}
+		} catch (Exception e) {} return boards;
+	}
 	
 	
 	

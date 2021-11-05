@@ -55,5 +55,10 @@
             <Font name="Kristen ITC" size="20.0" />
          </font>
       </Button>
+      <Button fx:id="btnactivation" layoutX="136.0" layoutY="56.0" mnemonicParsing="false" onAction="#activation" prefHeight="48.0" prefWidth="124.0" style="-fx-background-color: #e3edee; -fx-border-color: #bd85ea; -fx-border-radius: 15;" text="판매중">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
