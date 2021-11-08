@@ -40,7 +40,7 @@ public class Productupdatecontroller implements Initializable{
 		if(product.getP_category().equals("호텔양도")) {opt_1.setSelected(true);}
 		if(product.getP_category().equals("렌트카양도")) {opt_2.setSelected(true);}
 		if(product.getP_category().equals("항공권양도")) {opt_3.setSelected(true);}
-		if(product.getP_category().equals("ACC")) {opt_4.setSelected(true);}
+		if(product.getP_category().equals("ETC")) {opt_4.setSelected(true);}
 		
 	}
 
@@ -111,7 +111,7 @@ public class Productupdatecontroller implements Initializable{
     	if(opt_1.isSelected()) {category="호텔양도";}
 		if(opt_2.isSelected()) {category="렌트카양도";}
 		if(opt_3.isSelected()) {category="항공권양도";}
-		if(opt_4.isSelected()) {category="ACC";}
+		if(opt_4.isSelected()) {category="ETC";}
 		
 		// 객체화 
 		Product product2 = new Product(

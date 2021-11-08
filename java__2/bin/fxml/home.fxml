@@ -1,44 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="748.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="748.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Homecontroller">
    <children>
       <ImageView fitHeight="800.0" fitWidth="804.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@see.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="182.0" layoutX="176.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@121.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="199.0" fitWidth="228.0" layoutX="8.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@121.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="176.0" layoutX="509.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@121.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="388.0" fitWidth="399.0" layoutX="372.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@dolphin2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="319.0" fitWidth="376.0" layoutX="8.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="319.0" fitWidth="376.0" layoutX="15.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@dolphin.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="605.0" fitWidth="615.0" layoutX="-106.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+      <Circle fill="#24b8c6" layoutX="155.0" layoutY="119.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="110.0" layoutY="86.0" prefHeight="52.0" prefWidth="97.0" text="total member">
+         <font>
+            <Font name="Kristen ITC" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbltotalmember" layoutX="137.0" layoutY="138.0" prefHeight="34.0" prefWidth="43.0" text="999" textFill="#2aee4e">
+         <font>
+            <Font name="Kristen ITC" size="18.0" />
+         </font>
+      </Label>
+      <Circle fill="#1880e8" layoutX="389.0" layoutY="119.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="344.0" layoutY="86.0" prefHeight="52.0" prefWidth="97.0" text="totalboard">
+         <font>
+            <Font name="Kristen ITC" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbltotalboard" layoutX="371.0" layoutY="138.0" prefHeight="34.0" prefWidth="43.0" text="999" textFill="#2aee4e">
+         <font>
+            <Font name="Kristen ITC" size="18.0" />
+         </font>
+      </Label>
+      <Circle fill="DODGERBLUE" layoutX="618.0" layoutY="119.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="573.0" layoutY="86.0" prefHeight="52.0" prefWidth="97.0" text="totalproduct">
+         <font>
+            <Font name="Kristen ITC" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbltotalproduct" layoutX="601.0" layoutY="138.0" prefHeight="34.0" prefWidth="53.0" text="999" textFill="#2aee4e">
+         <font>
+            <Font name="Kristen ITC" size="18.0" />
+         </font>
+      </Label>
+      <Accordion layoutX="88.0" layoutY="230.0" prefHeight="343.0" prefWidth="601.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="23.0" prefWidth="601.0" text="제품 등록 추세">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <LineChart fx:id="lc" layoutX="250.0" layoutY="-1.0" prefHeight="277.0" prefWidth="350.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis lowerBound="-5" side="LEFT" upperBound="20" />
+                          </yAxis>
+                        </LineChart>
+                        <Label fx:id="lblincrease" layoutX="42.0" layoutY="74.0" prefHeight="0.0" prefWidth="48.0" text="증가" textFill="#f81717">
+                           <font>
+                              <Font name="Kristen ITC" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbldecrease" layoutX="107.0" layoutY="74.0" prefHeight="0.0" prefWidth="48.0" text="감소" textFill="#0030ff">
+                           <font>
+                              <Font name="Kristen ITC" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="30.0" prefHeight="52.0" prefWidth="97.0" text="전일 대비">
+                           <font>
+                              <Font name="Kristen ITC" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="제품 카테고리">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <BarChart fx:id="bc" layoutX="250.0" prefHeight="277.0" prefWidth="350.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label fx:id="lblcategory" layoutX="79.0" layoutY="117.0" prefHeight="34.0" prefWidth="97.0" text="항공권양도" textFill="#f81717">
+                           <font>
+                              <Font name="Kristen ITC" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="42.0" layoutY="56.0" prefHeight="52.0" prefWidth="134.0" text="가장 많은 카테고리">
+                           <font>
+                              <Font name="Kristen ITC" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="13.0" prefWidth="601.0" text="제품 상태 현황">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="pc" layoutX="250.0" layoutY="-1.0" prefHeight="277.0" prefWidth="350.0" />
+                        <Label layoutX="63.0" layoutY="77.0" prefHeight="34.0" prefWidth="97.0" text="제품상태현황(수)" />
+                        <Label layoutX="63.0" layoutY="111.0" prefHeight="34.0" prefWidth="211.0" text="판매중 :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="145.0" prefHeight="34.0" prefWidth="211.0" text="거래중 :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="179.0" prefHeight="34.0" prefWidth="211.0" text="판매완료중 :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <ImageView fitHeight="319.0" fitWidth="376.0" layoutX="266.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true" rotate="9.5">
          <image>
-            <Image url="@whale.png" />
+            <Image url="@dolphin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="319.0" fitWidth="376.0" layoutX="477.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true" rotate="-15.3">
+         <image>
+            <Image url="@dolphin.png" />
          </image>
       </ImageView>
    </children>

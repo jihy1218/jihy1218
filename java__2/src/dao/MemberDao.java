@@ -230,6 +230,54 @@ public class MemberDao {
 			} catch (Exception e) {}
 			return "";
 		}
+		
+		// 12. 회원 수 반환 메소드
+		public int membercount() {
+			String sql = "select count(*) from member ";
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				resultSet = preparedStatement.executeQuery();
+				if(resultSet.next()) {
+					return resultSet.getInt(1);	
+				}
+				
+			} catch (Exception e) {	} return 0;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 	
@@ -287,7 +335,14 @@ public class MemberDao {
 					* 다른테이블에 pk와 연결된 필드 대부분[M]
 					* 
 					
-			
+				DB함수[메소드]
+				now() : 시스템날짜/시간
+				count(필드) : 해당 필드의 레코드 수
+				
+				값설정 
+				XYchart.Series 변수명 : new XYChart.Series<>();
+				계열이름 
+				계열명.setName
 	
 	*/
 	

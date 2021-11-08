@@ -45,7 +45,7 @@
       </RadioButton>
       <RadioButton fx:id="opt_2" layoutX="262.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" text="렌트카 양도" toggleGroup="$category" />
       <RadioButton fx:id="opt_3" layoutX="357.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" text="항공권양도" toggleGroup="$category" />
-      <RadioButton fx:id="opt_4" layoutX="448.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="ACC" toggleGroup="$category" />
+      <RadioButton fx:id="opt_4" layoutX="448.0" layoutY="367.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="ETC" toggleGroup="$category" />
       <Label layoutX="68.0" layoutY="397.0" prefHeight="37.0" prefWidth="36.0" text="가격" />
       <TextField fx:id="txtprice" layoutX="177.0" layoutY="397.0" prefHeight="37.0" prefWidth="324.0" />
       <Label layoutX="68.0" layoutY="443.0" prefHeight="47.0" prefWidth="66.0" text="제품이미지" />

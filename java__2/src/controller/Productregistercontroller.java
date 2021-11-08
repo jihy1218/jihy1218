@@ -77,7 +77,7 @@ public class Productregistercontroller {
 			if(opt_1.isSelected()) {pcategory="호텔양도";}
 			if(opt_2.isSelected()) {pcategory="렌트카양도";}
 			if(opt_3.isSelected()) {pcategory="항공권양도";}
-			if(opt_4.isSelected()) {pcategory="ACC";}
+			if(opt_4.isSelected()) {pcategory="ETC";}
 			// 로그인된 id의 회원번호 검색 DB처리
 			int m_no = MemberDao.getMemberDao().mnocheck(Mainpagecontroller.getinstance().getloginid());
 		// 객체화
