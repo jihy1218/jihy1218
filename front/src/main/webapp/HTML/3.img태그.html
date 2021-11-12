@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>강아지 이미지 비교</title>
+</head>
+<body>
+	<h1> img src = "이미지파일경로.확장자명" </h1>
+		<p>% : 문서 사이즈 백분율 [ 자동크기 ]
+		<p>px : 모니터 사이즈 상대크기[기본값] [픽셀]
+		<p> 이미지 경로 : 
+			<p> 절대 경로[모든경로] : D:\Enterprise\front\src\main\webapp\HTML\강아지이미지.jpg
+			<p> 상대 경로[현재위치 기준] :
+				<p> \ : 루트
+				<p>.\ : 현재 경로
+				<p>..\ : 현재 폴더의 상단 폴더
+	<h1> 이미지 태그 : </h1>
+	<img src="강아지이미지.jpg" title="동물가족" > 
+		<!-- 태그명.속성명 title은 넣어도 되고 안넣어도됨 width="사이즈"-->
+	<img alt="" src="강아지이미지.jpg" width="300">
+	<img alt="" src="강아지이미지.jpg" width="150" height="200">
+	<br>
+	<img alt="" src="강아지이미지.jpg" width="300px" >
+	<br>
+	<img alt="" src="강아지이미지.jpg" width="50%">
+	<p> 절대 경로 </p>
+	<br> <!-- 절대 경로 -->
+		<img alt="" src="D:\Enterprise\front\src\main\webapp\HTML\강아지이미지.jpg">
+		<img alt="" src="http://localhost:8081/front/HTML/강아지이미지.jpg">
+	<p> 상대 경로1 </p>
+	<br> <!-- 상대 경로 -->
+	<img alt="" src="강아지이미지.jpg">
+	<p> 상대 경로2 </p>
+	<br> <!-- 상대 경로 -->
+	<img alt="" src="../webapp/강아지이미지.jpg">
+	<p> 상대 경로3 : 상위폴더 이동</p>
+	<br> <!-- 상대 경로 -->
+	<img alt="" src="../강아지이미지.jpg"> <!-- ../ 현재폴더 위로 이동 -->
+	<p> 상대 경로4 : 하위폴더 이동 </p>
+	<img alt="" src="img/강아지이미지.jpg">
+	
+	
+</body>
+</html>
