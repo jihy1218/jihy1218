@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<style type="text/css">
+		*{margin: 0; padding: 0;} 		/* 여백 초기값 제거 */
+		header, footer {
+			height : 70px;
+			width: 100%;
+			background-color: skyblue;	padding-top: 25px;  
+			text-align: center; box-sizing: border-box;
+			position: fixed; 		/* 위치고정 */
+			z-index: 100;			/* 겹쳤을때(float) 우선순위 */			
+		}  
+		#main{
+			padding: 80px 20px;  
+			line-height: 1.5rem;	/* 글자배율 */
+		}
+		footer{
+			background-color: pink;
+			bottom: 0;			/* position 사용할 경우 아래쪽에서 떨어진 간격 */
+		}
+		img {
+			width: 50%; max-width: 350%;  	/* 배율 =>최대크기 */ 
+			float: left; 					/* 문단과 같이 배치 */
+			margin: 5px 15px 5px 0px;		/* 사진 주변 바깥여백  */
+		}
+		/* 플로팅박스 */
+		.divbox {
+			width: 250px;
+			height: 150px;
+			background-color: red;
+			border-color: solid 1px red;
+			position: absolute; right: 50px;  top: 150px;
+			opacity: 0.9;    /* 투명도 */
+			text-align: center;
+			box-sizing: border-box; 
+			z-index:  10;	/* 겹쳤을때(float) 우선순위 */ 
+			color: white;
+		}
+		.divbox .close {
+			text-align: right; 
+			margin: 5px 10px;
+		}
+		.divbox .close:hover{cursor: pointer;}	/* hover : 마우스 올렸을때 마우스 모양 변경 */
+		.divbox p{
+			margin-top : 30px;    
+		}
+	</style>
+</head>
+<body>
+ 	<header>여기는 헤더 부분</header>
+	<div id="main">
+		<p>현존하는 모든 고양잇과 동물들은 대략 1,500만년 전에 하나의 조상으로부터 갈라져 나온 것으로 추측되며, 그 중 고양이의 조상으로 여겨지는 것은 아프리카들고양이(Felis lybica)라는 동물이다. </p>
+		<p>중동에 살던 인류가 약 만년 전에 사막고양이를 가축화하여 인간과 함께 살기 시작한 것으로 생각된다. 현대의 사막고양이는 살쾡이 종류치고는 체구가 작은 편이지만 꼬리를 제외한 몸길이가 대략 45~75cm 정도, 체중은 약 3~6.5kg 정도인데 만약 오늘날 집고양이의 조상인 사막고양이도 덩치가 이랬다면 고양이는 인간에게 길들여지는 과정에서 몸이 상당히 작아진 셈이다.</p>
+		<img alt="" src="hotel.png">
+		<p>하지만 아직 중형견에 육박하거나 덩치가 큰 품종도 존재한다. 메인쿤이나 랙돌 등.</p>
+		<p>고대 이집트인들은 고양이를 신격화할 정도로 좋아했는데, 이는 고양이가 독사를 사냥할 수 있었기 때문이라 한다. 다만, 오늘날 우리가 집에서 기르는 고양이를 가족처럼 생각하며 이름도 지어주는 것과 다르게, 고대 이집트인들은 야생 고양이와 자기 집에 사는 고양이를 구분하지 않았으며, 이름도 지어주는 법이 없이 그냥 “미유”나 “미윳”이라고만 불렀다(“야옹”이라는 뜻). 반면 집에 기르는 개는 이름을 붙여주었다고 하니, 당시 고양이는 아직 완전한 가축/반려동물이 아니라 반 야생/반 공생 동물 취급을 받았던 모양이다.</p>
+	</div>
+	<!-- 플로팅박스 -->
+	<div class="divbox">
+		<div class="close">x</div>
+		<p>여기는 플로팅 박스</p> 
+	</div>
+	<footer>여기는 푸터</footer>
+<!-- 최신버젼 Jquery 불러오기 -->
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!-- js 사용 -->
+	<script type="text/javascript">
+		$(".close").on("click", function() {
+			$(".divbox").fadeOut(); 
+		})
+		// 자바스크립트 주석
+		// $(".클래스명") 
+			// .on : 이벤트
+			// ("클릭", 함수(){실행문})
+				// $(".클래스명").fadeOut() : 해당 태그 숨김
+	</script>
+</body>
+</html>
