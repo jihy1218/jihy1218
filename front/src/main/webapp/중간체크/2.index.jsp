@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>The Studio</title>
-	<style type="text/css">
-	</style>
+<title>Insert title here</title>
+	
 </head>
 <body>
-	<%@include file="2.header.jsp" %>	
-	<%@include file="3.main.jsp" %>
-	<%@include file="4.footer.jsp" %>	
+	<%@include file="1.부트스트랩.jsp" %>
+	<%@include file="3.header.jsp" %>
+	<%@include file="4.main.jsp" %>
+	<footer>
+	푸터
+	</footer>
 </body>
 </html>
