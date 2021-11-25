@@ -8,11 +8,8 @@
 	
 </head>
 <body>
-	<%@include file="1.ºÎÆ®½ºÆ®·¦.jsp" %>
 	<%@include file="3.header.jsp" %>
 	<%@include file="4.main.jsp" %>
-	<footer>
-	ÇªÅÍ
-	</footer>
+	<%@include file="5.footer.jsp" %>
 </body>
 </html>

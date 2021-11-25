@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 	<style type="text/css">
 		*{margin: 0; padding: 0; box-sizing: border-box;
-			border: solid 1px skyblue; 
 		}
 		#navbarcontents {font-size: 20px; font-weight: bold;} 
 		.icon { 

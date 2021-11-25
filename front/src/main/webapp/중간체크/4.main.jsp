@@ -5,6 +5,15 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+	<style type="text/css">
+		li{ list-style-type: none;}
+		.item {
+			border-bottom: solid 2px  #5b6e8c;
+		}
+		.item a{ color :#5b6e8c;
+			
+		}
+	</style>
 </head>
 <body>
 	<%@include file="1.부트스트랩.jsp" %>
@@ -34,15 +43,29 @@
 			</a>
 		</div>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				박스1
+		<div class="row item">
+			<div class="col-md-4 img1">
+				<ul>
+					<li><img src="img/main_bmw.jpg"></li>
+					<li><h3><a href="#">Driving Center</a></h3></li>
+					<li>BMW 드라이빙 센터 예약</li>
+				</ul>
 			</div>
-			<div class="col-md-6">
-				박스2
+			<div class="col-md-4">
+				<ul>
+					<li><img src="img/main_bmw2.jpg"></li>
+					<li><h3><a href="#">BWM ONLINE SHOP</a></h3></li>
+					<li>BMW 차량 구매</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li><img src="img/main_bmw3.jpg"></li>
+					<li><h3><a href="#">BMW REPAIR SHOP</a></h3></li>
+					<li>BMW 수리 센터 예약</li>
+				</ul>
 			</div>
 		</div>
-	
 	</div>
 
 </body>
