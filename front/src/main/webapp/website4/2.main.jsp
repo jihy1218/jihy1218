@@ -55,7 +55,7 @@
 						<span class="price mr-2">75,000원</span>65,000원</p>
 						<span class="badge badge-pill badge-warning">주문폭주</span>
 						<span class="badge badge-pill badge-danger">품절임박</span>
-					</div>
+					</div>`
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 my-3">
@@ -81,7 +81,7 @@
 						<p class="card-text">띠아모 부클 니트 트레이닝 세트</p>
 						<hr>
 						<p class="item p-1">
-							알파카소재가 혼용된오리지널 부클원사 니트입니다.트랜디한 꾸안꾸 스타일링이가능합니다.<br><br>
+							알파카소재가 혼용된오리지널 부클원사 니트입니다.트랜디한 스타일링이가능합니다.<br><br>
 						<span class="price mr-2">75,000원</span> 65,000원</p>
 						<span class="badge badge-pill badge-warning">주문폭주</span>
 						<span class="badge badge-pill badge-danger">품절임박</span>

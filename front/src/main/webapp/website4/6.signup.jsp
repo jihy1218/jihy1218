@@ -53,14 +53,17 @@
 				<p>생년월일을 입력하시면<span class="text-primary">회원가입 쿠폰을 지급</span>해드립니다.
 			</div>
 			<div class="signup_item">
-				<div class="row">
-					<div class="col-md-1 mt-1">
-						<input class="form-control" type="checkbox">
-					</div>
-					<!-- <div class="col-md-3">
-						<span>약관 모두 동의</span>
-					</div> -->
-				</div>		
+				<h5>이용약관 확인<span class="text-danger">*</span></h5>
+				<div class="terms">
+					<p class="mb-3"><span><input class="mr-3" type="checkbox">이용약관 및 개인정보수집 및 이용,쇼핑정보 수신(선택)에 모두 동의합니다.</span></p>
+					<p class="mb-3"><span><input class="mr-3" type="checkbox">[필수] 이용약관 동의<span class="text-danger">*</span></span></p>
+					<p class="mb-3"><span><input class="mr-3" type="checkbox">[필수] 개인정보 수집 및 이용 동의<span class="text-danger">*</span></span></p>
+					<p class="mb-3"><span><input class="mr-3" type="checkbox">[선택] 이메일 수신 동의</span></p>
+				</div>
+			</div>
+			<div class="signup_item">
+				<a href="2.main.jsp"><button class="btn btn-secondary">취소</button></a>
+				<a href="2.main.jsp"><button class="btn btn-dark">회원가입</button></a>
 			</div>
 		</div>
 	</div>

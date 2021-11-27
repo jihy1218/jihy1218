@@ -45,11 +45,11 @@ header{
 	padding-top: 20px;
 	box-sizing: border-box;
 	margin: 0 auto;
-	width: 500px;
+	width: 513px;
 	text-align: center;
 }
 .sns_login h4{
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 	border-bottom: solid 2px #343a40;
 }
 .inner h5 {
@@ -63,4 +63,8 @@ header{
 }
 .signup_item {
 	margin-bottom: 30px;
+}
+.terms {
+	border: solid 2px  #eeeeee;
+	padding: 4px 0 0 4px; 
 }

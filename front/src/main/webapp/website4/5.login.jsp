@@ -18,20 +18,20 @@
 				<input class="form-control mb-2" type="password" placeholder="패스워드">
 			</div>
 			<div class=>
-				<button class="btn btn-dark" style="padding : 6px 227px 6px 227px;">로그인</button>
+				<button class="btn btn-dark" style="padding : 6px 232px 6px 232px;">로그인</button>
 			</div>
 			<div class="find_info mt-2">
 				<a href="#" class="text-dark pr-3">아이디찾기</a>
 				<a href="#" class="text-dark pr-3">비밀번호찾기</a>
 				<a href="6.signup.jsp" class="text-dark">회원가입</a>	
 			</div>
+			<br>
 			<div class="sns_login mt-3" >
 				<h4>SNS 로그인/가입</h4>
-				<a href="https://facebook.com" class="me-4 mr-2"><i class="fab fa-facebook fa-3x"></i></a>
-				<a href="https://twitter.com" class="me-4 mr-2 "><i class="fab fa-twitter fa-3x"></i></a>
-				<a href="https://www.google.com" class="me-4 mr-2"><i class="fab fa-google fa-3x"></i></a>
-				<a href="https://www.instagram.com" class="me-4 mr-2"><i class="fab fa-instagram fa-3x"></i></a>
-				<a href="https://www.apple.com/kr" class="me-4"><i class="fab fa-apple fa-3x"></i></a>
+				<br>
+				<a href="https://naver.com" class="me-4 mr-2"><img src="img/naver1.png"> </a>
+				<a href="https://www.apple.com/kr" class="me-4"><img src="img/apple.png"> </a>
+				<a href="https://www.kakaocorp.com/page/" class="mb-3"><img src="img/kakao.png"> </a>
 			</div>
 		</div>
 	</div>
