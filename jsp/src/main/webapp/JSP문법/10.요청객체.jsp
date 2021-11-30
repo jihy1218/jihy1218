@@ -19,7 +19,6 @@
 				<option value="체육학과">체육학과</option>
 			</select><br>
 		<input type="submit" value="보내기">
-	
 	</form>
 </body>
 </html>
