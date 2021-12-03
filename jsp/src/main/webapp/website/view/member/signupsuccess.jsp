@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@include file="../2.header.jsp" %>
+	<%@include file="../header.jsp" %>
 	<h3>회원가입 성공페이지</h3>
 </body>
 </html>

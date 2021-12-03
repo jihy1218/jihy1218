@@ -1,0 +1,21 @@
+
+
+	1.var 변수명 :
+		
+	2.반복문 -> java 동일
+	
+	3.함수
+		함수 정의시 : function 함수명(인수1,인수2)  :인수는 자료형 없음
+		함수 호출시 : <태그 이벤트속성="함수명(인수1,인수2);">
+	js에서 html 접근 방법
+		1.document : 현재 문서[HTML] 접근 가능
+		2.document.getElementById["id"]  					:문서[html]내 id 접근 가능
+		3.document.getElementById["id"].textContent=변수;		:해당 id내 <>텍스트추가<>
+		4.document.getElementById["id"].innerHTML=변수; 		:해당 id내 html추가
+		5.document.getElementById["id"].style.속성명(color,background등)="값" :해당 id에 css style 적용
+		6.document.태그명
+
+
+
+
+

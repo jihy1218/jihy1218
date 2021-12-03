@@ -11,22 +11,16 @@
 	<%
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
-		String pw = request.getParameter("password");
-		Cookie cookie = new Cookie("id",id);
-		boolean result = MemberDao.getmemberDao().memberlogin(id, pw);
-		if(result) {
-			session.setAttribute("id", id);
-			session.setAttribute("password", pw);
-			response.sendRedirect("../view/member/loginsuccess.jsp");
-			
-			cookie.setValue(pw);
-			response.addCookie(cookie);
+		String password = request.getParameter("password");
+		// DB 처리
+		boolean result = MemberDao.getmemberDao().memberlogin(id, password);
+		if(result) { // 로그인 성공시
+			// 세션 부여[ 내장객체 : 기본값 30분]
+			session.setAttribute("loginid", id);		// 세션명 , 세션데이터
+			response.sendRedirect("../view/main.jsp");
 		}else{
-			out.print("<script>alert('아이디 혹은 비밀번호가 일치하지않습니다.')</script>");
-			out.println("<script>location.href='../view/member/login.jsp';</script>");
+			response.sendRedirect("../view/member/login.jsp?result=fail");
 		}
-			
-		
 	%>
 </body>
 </html>

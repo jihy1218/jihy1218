@@ -1,0 +1,66 @@
+
+
+------------------------ 동기식 vs 비동기식 ----------------------
+
+
+	동기식 vs 비동기식
+	
+	 *동기식 : 은답 기다림
+	 	페이지 전환o [요청 ,응답 결과 o]
+	 	1.form action="페이지 경로"
+	 	
+	 *비동기식:응답 기다리지 않음
+	 	페이지 전환x [요청에 따른 결과 x]
+		1.Ajax[jquery] 
+			Ajax({속성명1 : 값1 , 속성명2 : 값2})
+				1. url : 이동할 페이지				:경로 파일명
+				2. data : { 이동할 데이터 }		:변수명 : 값
+				3. success : function(result) {} :결과 가져오기
+					1.통신 결과는 통신한 페이지의 html
+
+
+------------------------ ajax 사용예 js ----------------------
+
+/* 아이디 중복체크 [ ajax ] */
+	$( function(){
+		// $("id명").이벤트명( 함수명(){ 실행코드; } );
+		$("#id").change( function() { 
+			// 비동기식 : $.ajax({ 속성명 : "값" , 속성명 : "값" , 속석명 : "값" });
+			$.ajax({ 
+				url : "idcheck.jsp" ,	
+				/* url : 통신할 경로 페이지 */ 
+				data :{userid:document.getElementById("signupform").id.value} , 	
+				/* 이동할 데이터 */
+				success : function( result ){ 
+				/* 통신이 성공했을때*/
+					if( result == 1 ){ 	// js 변수는 자료형 없다
+						document.getElementById("idresult").innerHTML = "사용중인 아이디";
+					}else{
+						
+					}
+				}
+			});
+		});
+	});
+/* 아이디 중복체크 end */
+
+------------------------ ajax 사용예 통신경로  ----------------------
+
+	// 1. ajax 통신된 데이터를 요청 
+	String userid = request.getParameter("userid");
+	// 2. Dao 아이디 체크 
+	boolean result =  MemberDao.getmemberDao().idcheck(userid);
+	if( result ){ 
+		out.print("1"); // JSP 태그에서 html 에 작성하기
+	}
+	else{ 
+		out.print("0"); 
+	}
+
+	// jsp 태그는 통신 결과로 반환X 
+	// HTML 만 통신 결과로 반환O
+
+
+
+
+

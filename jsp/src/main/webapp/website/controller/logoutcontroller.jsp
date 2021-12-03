@@ -4,8 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-	<h3>푸터부분</h3>
+	<%
+		session.setAttribute("loginid", null);
+		response.sendRedirect("../view/main.jsp");
+	%>
 </body>
 </html>
