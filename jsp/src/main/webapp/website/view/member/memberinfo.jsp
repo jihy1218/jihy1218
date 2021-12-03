@@ -69,12 +69,12 @@
 										<td>연락처</td><td id="tdphone"><%=member.getM_phone() %></td><td><button onclick="phonechange();" class="btn btn-info">수정</button></td>
 									</tr>
 									<tr>
-										<td>주소</td><td><%=member.getM_address() %></td><td><button class="btn btn-success">수정</button></td>
+										<td>주소</td><td><%=member.getM_address() %></td><td><button onclick="addresschange();" class="btn btn-success">수정</button></td>
 									</tr>
-									<tr style="display : none;">
-										<td>
+									<tr id="tdaddress" style= "display : none">
+										<td colspan="3">
 											<div class="row">
-												<div class="col-md-3 m-2"><label>주소</label><span class="text-danger">*</span></div>					
+												<div class="col-md-3 m-2"><label>주소</label></div>					
 												<div class="col-md-8">
 													<div class="row">
 														<div class="col-md-6"><input type="text" name="address1" id="sample4_postcode" placeholder="우편번호" class="form-control"></div>
@@ -86,6 +86,9 @@
 													</div>
 													<input type="text" id="sample4_detailAddress" name="address4" class="form-control" placeholder="상세주소">
 												</div>
+											</div>
+											<div>
+												<button id="addersschange"  class="btn btn-success">확인</button>
 											</div>
 										</td>
 									</tr>

@@ -151,17 +151,15 @@ function passwordchange(){
 }
 /*회원 비밀번호 수정end*/	
 /*회원 성별 수정*/
-/*function sexchange(){
+function sexchange(){
 	alert("성별 수정후 확인버튼을 눌러주세요.");
 	document.getElementById("tdsex").innerHTML = "<input type='radio' name='sex' value='man' id='sex1'>남성<input type='radio' name='sex' value='woman' id='sex2'>여성<br> <button id='sexchangebtn' class='btn btn-primary'>확인</button>";
 	$(function(){
 		$("#sexchangebtn").click(function(){
 			$.ajax({
 				url : "../../controller/memberinfoupdatecontroller.jsp",
-				data : {sex:document.getElementByID("sex1").value , sex:document.getElementByID("sex2").value
-				},
+				data : {sex:document.querySelector('input[name="sex"]:checked').value},
 				success : function(result) {
-					alert("result");
 					if(result == 1) {
 						alert('회원님의 성별이 수정되었습니다.');
 						location.href='memberinfo.jsp';
@@ -172,12 +170,12 @@ function passwordchange(){
 			});
 		});		
 	});
-}*/
+}
 /*회원 성별 수정end*/	
 /*회원 생년월일 수정*/
 function birthchange(){
 	alert("생일 수정후 확인버튼을 눌러주세요.");
-	document.getElementById("tdbirth").innerHTML = "<input type='date' id='birth' name='birth' class='form-control' > <br> <button id='birthchangebtn' class='btn btn-secondary'>확인</button>";
+	document.getElementById("tdbirth").innerHTML = "<input type='date' id='birth' class='form-control' > <br> <button id='birthchangebtn' class='btn btn-secondary'>확인</button>";
 	$(function(){
 		$("#birthchangebtn").click(function(){
 			$.ajax({
@@ -188,7 +186,7 @@ function birthchange(){
 						alert('회원님의 생일이 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패');
+						alert('수정실패1');
 					}
 				}
 			});
@@ -210,7 +208,7 @@ function phonechange(){
 						alert('회원님의 전화번호가 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패');
+						alert('수정실패2');
 					}
 				}
 			});
@@ -221,25 +219,31 @@ function phonechange(){
 
 /*회원 주소 수정*/
 function addresschange(){
-	alert("이름수정후 확인버튼을 눌러주세요.");
-	document.getElementById("tdname").innerHTML = "<input type='text' id='name' class='form-control' > <br> <button id='namechangebtn' class='btn btn-warning'>확인</button>";
+	alert("주소 수정후 확인버튼을 눌러주세요.");
+	document.getElementById("tdaddress").style.display="";
+	
+}
 	$(function(){
-		$("#namechangebtn").click(function(){
+		$("#addersschange").click(function(){
 			$.ajax({
 				url : "../../controller/memberinfoupdatecontroller.jsp",
-				data : {name:document.getElementById("name").value},
+				data : {address1:document.getElementById("sample4_postcode").value,
+						address2:document.getElementById("sample4_roadAddress").value,
+						address3:document.getElementById("sample4_jibunAddress").value,
+						address4:document.getElementById("sample4_detailAddress").value
+				},
 				success : function(result) {
+					alert(result);
 					if(result == 1) {
-						alert('회원님의 이름이 수정되었습니다.');
+						alert('회원님의 주소가 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
 						alert('수정실패');
 					}
 				}
-			});
+			})
 		});		
 	});
-}
 /*회원 주소 수정end*/	
 
 /* 회원가입 유효성검사 */
