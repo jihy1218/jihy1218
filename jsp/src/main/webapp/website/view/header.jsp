@@ -1,3 +1,4 @@
+<%@page import="dao.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,7 +21,9 @@
 	<!-- 다음 주소 api js호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	<!-- 다음 우편 -->
 	<%
-		String loginid = (String)session.getAttribute("loginid");
+		Login login = (Login)session.getAttribute("login");
+		String loginid = null;
+		if(login != null) {loginid = login.getM_id();}
 	%>
 	<!-- 헤더 start -->
 		<div class="fixed-top bg-white">	<!-- 상단 고정 , 배경 흰색 -->
@@ -69,7 +72,7 @@
 							<li class="nav-item"><a href="" class="nav-link">7시리즈</a></li>
 							<li class="nav-item"><a href="" class="nav-link">이벤트</a></li>
 							<li class="nav-item"><a href="" class="nav-link">구매후기</a></li>
-							<li class="nav-item"><a href="" class="nav-link">고객센터</a></li>
+							<li class="nav-item"><a href="board/boardlist.jsp" class="nav-link">고객센터</a></li>
 						</ul>
 					</div>
 				</nav>

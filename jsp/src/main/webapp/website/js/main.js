@@ -120,7 +120,8 @@ function namechange(){
 						alert('회원님의 이름이 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패');
+						alert('이름수정실패');
+						location.href='memberinfo.jsp';
 					}
 				}
 			});
@@ -142,7 +143,8 @@ function passwordchange(){
 						alert('회원님의 비밀번호가 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패');
+						alert('비밀번호수정실패');
+						location.href='memberinfo.jsp';
 					}
 				}
 			});
@@ -164,7 +166,8 @@ function sexchange(){
 						alert('회원님의 성별이 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패');
+						alert('성별수정실패');
+						location.href='memberinfo.jsp';
 					}
 				}
 			});
@@ -186,7 +189,8 @@ function birthchange(){
 						alert('회원님의 생일이 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패1');
+						alert('성별수정실패');
+						location.href='memberinfo.jsp';
 					}
 				}
 			});
@@ -208,7 +212,8 @@ function phonechange(){
 						alert('회원님의 전화번호가 수정되었습니다.');
 						location.href='memberinfo.jsp';
 					}else{
-						alert('수정실패2');
+						alert('연락처수정실패');
+						location.href='memberinfo.jsp';
 					}
 				}
 			});
@@ -223,27 +228,27 @@ function addresschange(){
 	document.getElementById("tdaddress").style.display="";
 	
 }
-	$(function(){
-		$("#addersschange").click(function(){
-			$.ajax({
-				url : "../../controller/memberinfoupdatecontroller.jsp",
-				data : {address1:document.getElementById("sample4_postcode").value,
-						address2:document.getElementById("sample4_roadAddress").value,
-						address3:document.getElementById("sample4_jibunAddress").value,
-						address4:document.getElementById("sample4_detailAddress").value
-				},
-				success : function(result) {
-					alert(result);
-					if(result == 1) {
-						alert('회원님의 주소가 수정되었습니다.');
-						location.href='memberinfo.jsp';
-					}else{
-						alert('수정실패');
-					}
+$(function(){
+	$("#addersschange").click(function(){
+		$.ajax({
+			url : "../../controller/memberinfoupdatecontroller.jsp",
+			data : {address1:document.getElementById("sample4_postcode").value,
+					address2:document.getElementById("sample4_roadAddress").value,
+					address3:document.getElementById("sample4_jibunAddress").value,
+					address4:document.getElementById("sample4_detailAddress").value
+			},
+			success : function(result) {
+				if(result == 1) {
+					alert('회원님의 주소가 수정되었습니다.');
+					location.href='memberinfo.jsp';
+				}else{
+					alert('주소수정실패');
+					location.href='memberinfo.jsp';
 				}
-			})
-		});		
-	});
+			}
+		})
+	});		
+});
 /*회원 주소 수정end*/	
 
 /* 회원가입 유효성검사 */

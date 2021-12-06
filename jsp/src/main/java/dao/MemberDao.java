@@ -17,14 +17,12 @@ public class MemberDao {
 	private PreparedStatement preparedStatement;
 	private ResultSet resultSet;
 	
+	// 생성자
 	public MemberDao() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/jsp?serverTimezone=UTC","root","1234");
-			System.out.println("DB연동성공");
-		} catch (Exception e) {
-			System.out.println("DB연동실패");
-		}
+		} catch (Exception e) {	System.out.println("DB연동실패");}
 		
 	}
 	public static MemberDao memberDao= new MemberDao();	// 3. dao 객체 생성
@@ -190,5 +188,16 @@ public class MemberDao {
 			return true;
 		} catch (Exception e) {	} return false;
 	}
-	
+	// 회원번호 검색 메소드
+	public int getmembernum(String m_id) {
+		String sql = "select m_num from member where m_id=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, m_id);
+			resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) {
+				return resultSet.getInt(1);
+			}
+		} catch (Exception e) {	} return 0;
+	}
 }

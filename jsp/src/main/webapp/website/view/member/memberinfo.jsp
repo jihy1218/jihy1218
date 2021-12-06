@@ -54,7 +54,7 @@
 										<td>포인트</td><td colspan="2"><%=member.getM_point() %></td>
 									</tr>
 									<tr>
-										<td>패스워드</td><td id="tdpassword">····</td><td><button onclick="passwordchange();" class="btn btn-danger">수정</button></td>
+										<td>패스워드</td><td id="tdpassword">·····</td><td><button onclick="passwordchange();" class="btn btn-danger">수정</button></td>
 									</tr>
 									<tr>
 										<td>회원명</td><td id="tdname"><%=member.getM_name() %></td><td><button onclick="namechange();" class="btn btn-warning">수정</button></td>

@@ -11,6 +11,13 @@
 </head>
 <body>
 	<%@include file="../header.jsp" %>
+	<%
+		// 로그인[세션]이 되어있는경우
+		if( loginid !=null ){
+			out.print("<script>alert('로그인이되어있습니다.');</script>");
+			out.println("<script>location.href='../main.jsp';</script>");
+		}
+	%>
 	<div class="container">
 		<div class="text-center">
 			<h3 style="border-bottom: solid 1px #eeeeee; padding-bottom: 10px;">로그인	</h3>
@@ -40,7 +47,6 @@
 							</div>
 							<%
 						}
-					
 					%>
 					<div>
 						<input type="submit" value="로그인" class="form-control p-3 m-3 text-secondary"></input>
