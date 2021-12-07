@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="dao.BoardDao"%>
 <%@page import="dto.Board"%>
 <%@page import="java.util.ArrayList"%>
@@ -12,7 +13,18 @@
 <body>
 	<%@include file="../header.jsp" %>
 	<div class="container">
-		<a href="boardwrite.jsp"><button class="btn btn-success float-right mb-2">글쓰기</button></a>
+		<div class="text-center">
+			<h3 style=" padding-bottom: 10px;">고객센터</h3>
+		</div>
+		<%if(loginid!=null) {%>
+			<a href="boardwrite.jsp"><button class="btn btn-success float-right mb-2">글쓰기</button></a>
+		<%
+		}else{%>
+		<script>alert("로그인후 글쓰기 가능합니다.")</script>
+		<%	
+		}
+		%>
+		<h3>질문게시판</h3>
 		<table class="table text-center table-hover listbaby">
 			<tr class="table-secondary">
 				<th>번호</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
@@ -25,12 +37,12 @@
 					<td class="table-info"><%=board.getB_num() %></td>
 					<td class="table-danger"><a href="boardview.jsp?b_num=<%=board.getB_num() %>"><%=board.getB_title() %></a></td>
 						<!-- 게시물 상세페이지 이동[클릭한 게시물 번호 요청] -->
-					<td class="table-warning"><%=board.getM_num() %></td>
+					<td class="table-warning"><%=board.getB_writer() %></td>
 					<td class="table-primary"><%=board.getB_date() %></td>
 					<td class="table-success"><%=board.getB_view() %></td>
 				</tr>
 			<% 
-			}
+				}
 			%>
 		</table>
 		<div class="text-center listbaby">
@@ -45,5 +57,7 @@
 			</ul>
 		</div>
 	</div>
+	<br><br><br><br>
+	<%@include file="../footer.jsp" %>
 </body>
 </html>

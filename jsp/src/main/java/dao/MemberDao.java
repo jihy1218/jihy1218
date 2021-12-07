@@ -200,4 +200,16 @@ public class MemberDao {
 			}
 		} catch (Exception e) {	} return 0;
 	}
+	// 회원아이디 검색 메소드
+		public String getmemberid(int m_num) {
+			String sql = "select m_id from member where m_num=?";
+			try {
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setInt(1, m_num);
+				resultSet = preparedStatement.executeQuery();
+				if(resultSet.next()) {
+					return resultSet.getString(1);
+				}
+			} catch (Exception e) {	} return null;
+		}
 }

@@ -10,6 +10,7 @@
 	String filename = request.getParameter("file");
 	// 2. 서버내 업로드 폴더에서 파일 찾기
 	String folderpath = request.getSession().getServletContext().getRealPath("website/upload/"+filename);
+	/* String folderpath = "D:/Enterprise/jihy1218/jsp/src/main/webapp/website/upload/"+filename; */
 						// request.getSession().getServletContext().getRealPath : 경로찾기
 	// 3. 파일 객체화
 	File file = new File(folderpath);

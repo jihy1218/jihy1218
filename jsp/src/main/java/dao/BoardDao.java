@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import dto.Board;
+import dto.Reply;
 
 public class BoardDao {
 
@@ -82,5 +83,79 @@ public class BoardDao {
 			}
 		} catch (Exception e) {	} return null;
 	}
-	
+	// 조회수 증가 메소드
+	public boolean boardcount(int b_num) {
+		String sql="update board set b_view = b_view+1 where b_num=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, b_num);
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {	} return false;
+	}
+	// 게시물 삭제 메소드
+	public boolean delete(int b_num) {
+		String sql ="delete from board where b_num=?";
+		try {
+			preparedStatement= connection.prepareStatement(sql);
+			preparedStatement.setInt(1, b_num);
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {	} return false;
+	}
+	// 게시물 수정 메소드
+	public boolean update(Board board) {
+		String sql = "update board set b_title=? , b_contents=? , b_file=? , b_file2=? where b_num=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, board.getB_title());
+			preparedStatement.setString(2, board.getB_contents());
+			preparedStatement.setString(3, board.getB_file());
+			preparedStatement.setString(4, board.getB_file2());
+			preparedStatement.setInt(5, board.getB_num());
+			preparedStatement.executeUpdate();
+			return true; 
+		}catch (Exception e) {} return false;
+	}
+	// 댓글 등록 메소드
+	public boolean replywrite(Reply reply) {
+		String sql ="insert into reply(r_contents , m_num , b_num) values(?,?,?)";
+		try {
+			preparedStatement= connection.prepareStatement(sql);
+			preparedStatement.setString(1, reply.getR_contents());
+			preparedStatement.setInt(2, reply.getM_num());
+			preparedStatement.setInt(3, reply.getB_num());
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {} return false;
+	}
+	// 댓글 출력 메소드
+	public ArrayList<Reply> replylist(int b_num){
+		ArrayList<Reply> replys = new ArrayList<>();
+		String sql = "select * from reply where b_num=? order by r_num desc";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, b_num);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				Reply reply = new Reply(resultSet.getInt(1),
+										resultSet.getString(2),
+										resultSet.getString(3),
+										resultSet.getInt(4),
+										resultSet.getInt(5));
+				replys.add(reply);
+			}
+			return replys;
+		} catch (Exception e) {	} return null;
+	}
+	// 댓글 삭제 메소드
+	public boolean replydelete(int r_num) {
+		String sql = "delete from reply where r_num=?";
+		try {
+			preparedStatement =connection.prepareStatement(sql);
+			preparedStatement.setInt(1, r_num);
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {	} return false;
+	}
 }

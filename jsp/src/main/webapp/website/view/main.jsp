@@ -18,13 +18,23 @@
 				<li data-target="carouselcontents" data-slide-to="3"></li>
 				<li data-target="carouselcontents" data-slide-to="4"></li>
 				<li data-target="carouselcontents" data-slide-to="5"></li>
+				<li data-target="carouselcontents" data-slide-to="6"></li>
+				<li data-target="carouselcontents" data-slide-to="7"></li>
+				<li data-target="carouselcontents" data-slide-to="8"></li>
+				<li data-target="carouselcontents" data-slide-to="9"></li>
+				<li data-target="carouselcontents" data-slide-to="10"></li>
 			</ol>
 			<div class="carousel-inner">
-				<div class="carousel-item active"> <img src="../img/7s.jpg"></div>
+				<div class="carousel-item active"> <img src="../img/m8.jpg"></div>
 				<div class="carousel-item"> <img src="../img/3s.jpg"></div>
 				<div class="carousel-item"> <img src="../img/5s.jpg"></div>
 				<div class="carousel-item"> <img src="../img/6s.jpg"></div>
 				<div class="carousel-item"> <img src="../img/i4.jpg"></div>
+				<div class="carousel-item"> <img src="../img/4s.jpg"></div>
+				<div class="carousel-item"> <img src="../img/7s.jpg"></div>
+				<div class="carousel-item"> <img src="../img/m8c.jpg"></div>
+				<div class="carousel-item"> <img src="../img/x4m.jpg"></div>
+				<div class="carousel-item"> <img src="../img/x7.jpg"></div>
 				<div class="carousel-item"> <img src="../img/8c.jpg"></div>
 			</div>
 		</div>

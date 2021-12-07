@@ -16,43 +16,42 @@
 	String address = request.getParameter("address1")+","+request.getParameter("address2")+","+
 			 request.getParameter("address3")+","+request.getParameter("address4");
 	
-	if(id!=null){
-		// 이름 변경
-		if(name!=null){
-			boolean nameresult = MemberDao.getmemberDao().nameupdate(name, id);
-			if(nameresult) {out.print(1);}
-			else{out.print(0);}
-		}
-		// 비밀번호 변경
-		if(password!=null){
-			boolean passwordresult = MemberDao.getmemberDao().passwordupdate(password, id);
-			if(passwordresult) {out.print(1);}
-			else{out.print(0);}
-		}
-		// 성별 변경
-		if(sex!=null){
-			boolean sexresult = MemberDao.getmemberDao().sexupdate(sex, id);
-			if(sexresult){out.print(1);}
-			else{out.print(0);}
-		}
-		// 생일 변경
-		if(birth!=null){
-			boolean birthresult = MemberDao.getmemberDao().birthupdate(birth, id);
-			if(birthresult){out.print(1);}
-			else{out.print(0);}
-		}
-		// 연락처 변경
-		if(phone!=null){
-			boolean phoneresult = MemberDao.getmemberDao().phoneupdate(phone, id);
-			if(phoneresult){out.print(1);}
-			else{out.print(0);}
-		}
-		// 주소 변경
-		if(address!=null) {
-			boolean addressresult = MemberDao.getmemberDao().addressupdate(address, id);
-			if(addressresult) {out.print(1);}
-			else{out.print(0);}
-		}
+	// 이름 변경
+	if(name!=null){
+		boolean nameresult = MemberDao.getmemberDao().nameupdate(name, id);
+		if(nameresult) {out.print(1);}
+		else{out.print(0);}
 	}
+	// 비밀번호 변경
+	if(password!=null){
+		boolean passwordresult = MemberDao.getmemberDao().passwordupdate(password, id);
+		if(passwordresult) {out.print(1);}
+		else{out.print(0);}
+	}
+	// 성별 변경
+	if(sex!=null){
+		boolean sexresult = MemberDao.getmemberDao().sexupdate(sex, id);
+		if(sexresult){out.print(1);}
+		else{out.print(0);}
+	}
+	// 생일 변경
+	if(birth!=null){
+		boolean birthresult = MemberDao.getmemberDao().birthupdate(birth, id);
+		if(birthresult){out.print(1);}
+		else{out.print(0);}
+	}
+	// 연락처 변경
+	if(phone!=null){
+		boolean phoneresult = MemberDao.getmemberDao().phoneupdate(phone, id);
+		if(phoneresult){out.print(1);}
+		else{out.print(0);}
+	}
+	// 주소 변경
+	if(address!=null) {
+		boolean addressresult = MemberDao.getmemberDao().addressupdate(address, id);
+		if(addressresult) {out.print(1);}
+		else{out.print(0);}
+	}
+
 	
 %>

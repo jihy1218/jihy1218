@@ -5,14 +5,8 @@
 <%@page import="dao.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<%
+
+<%
 		// MultipartRequest 객체명 = new  new MultipartRequest();
 		// 1.요청방식[request]
 		// 2.업로드 파일 경로
@@ -26,7 +20,7 @@
 				// 1. 서버 실제 경로
 				// 2. 
 		String folderpath = request.getSession().getServletContext().getRealPath("website/upload");
-		MultipartRequest multi = new MultipartRequest(request,folderpath,1024*1024*10, "utf-8", new DefaultFileRenamePolicy()); 
+		MultipartRequest multi = new MultipartRequest(request,folderpath,1024*1024*10, "UTF-8", new DefaultFileRenamePolicy()); 
 		// 요청	[일반 form]
 		/*
 		String title = request.getParameter("title");
@@ -36,6 +30,10 @@
 		request.setCharacterEncoding("UTF-8");
 		String title = multi.getParameter("title");
 		String contents = multi.getParameter("contents");
+		// <br> -> \n , 프론트 태그 제거  사용자 입력상자 사용시 필수
+		// contents = contents.replace("\r\n", "<br>");
+		contents = contents.replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>");
+		title = title.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\S)*(/)?","");		
 		String file = multi.getFilesystemName("file");	// getFilesystemName : 파일명 가져오기
 		String file2 = multi.getFilesystemName("file2");
 		
@@ -47,6 +45,4 @@
 		// DB 처리
 		BoardDao.getboardDao().boardwrite(board);
 		response.sendRedirect("../view/board/boardlist.jsp");
-	%>
-</body>
-</html>
+%>
