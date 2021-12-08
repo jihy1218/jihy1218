@@ -250,14 +250,6 @@ $(function(){
 	});		
 });
 /*회원 주소 수정end*/	
-function replyon() {
-	alert("고운말 작성 부탁드립니다.");
-	document.getElementById("replytable").style.display="";
-	document.getElementById("replyregister").style.display="";
-}
-function replywrite() {
-	document.getElementById("replywrite").style.display="";
-}
 /* 회원가입 유효성검사 */
   
 	function signupcheck(){
