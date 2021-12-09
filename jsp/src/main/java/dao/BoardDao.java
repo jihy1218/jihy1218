@@ -210,4 +210,5 @@ public class BoardDao {
 			}
 		} catch (Exception e) {	} return 0;
 	}
+	
 } // class end

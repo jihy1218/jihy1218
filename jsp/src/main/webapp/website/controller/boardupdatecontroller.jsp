@@ -19,10 +19,10 @@
 	String file2 = multi.getFilesystemName("file2");
 	
 	if(file==null) {
-		file = multi.getFilesystemName("oldfile");
+		file = multi.getParameter("oldfile");
 	}
 	if(file2==null) {
-		file2 = multi.getFilesystemName("oldfile2");
+		file2 = multi.getParameter("oldfile2");
 	}
 	int b_num = Integer.parseInt(multi.getParameter("b_num"));
 	// 객체화

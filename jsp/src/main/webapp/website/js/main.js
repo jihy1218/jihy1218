@@ -250,6 +250,29 @@ $(function(){
 	});		
 });
 /*회원 주소 수정end*/	
+// 게시물 상태 변경 start
+function activechange(p_num){
+	if( confirm("제품의 상태를 변경하시겠습니까?")== true){
+		$(function(){
+			$.ajax({
+				url : "../../controller/productactivecontroller.jsp",
+				data :{p_num:p_num},
+				success : function(result){
+					if(result==1){
+						alert('제품상태가 변경되었습니다.');
+						location.reload();
+					}else{
+						alert('상태변경 실패입니다.');
+						location.reload();
+					}
+				}
+			})
+		});
+	}else{
+		
+	}
+}
+
 /* 회원가입 유효성검사 */
   
 	function signupcheck(){
