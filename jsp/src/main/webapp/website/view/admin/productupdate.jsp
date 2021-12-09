@@ -28,7 +28,8 @@
 				카테고리 <select class="col-md-3 custom-select" name="p_category">
 						<option value="SUV">SUV</option>
 						<option value="SEDAN">세단</option>
-						<option value="M">M</option>
+						<option value="M">M12312312</option>
+						<option value="M">M12312312</option>
 						</select><br>
 				상세설명 <textarea class="col-md-3 form-control" rows="" cols="" name="p_contents"><%=product.getP_contents() %></textarea><br>
 				<input class="btn btn-info " type="submit" value="수정하기"><br>
