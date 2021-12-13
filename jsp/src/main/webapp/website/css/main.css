@@ -27,3 +27,7 @@ body{font-family: SDSamliphopangche_Basic;}
 .listbaby a {
 	color : #212529;
 }
+#total {
+	font-weight: bold;
+	font-size: 1rem;
+}

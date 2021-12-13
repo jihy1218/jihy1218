@@ -141,4 +141,72 @@ public class ProductDao extends DB{
 			}
 		} catch (Exception e) {	} return false;
 	}
+	// 제품 개별 출력
+	public Product getproducts(int p_num) {
+		String sql ="select * from product where p_num=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, p_num);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Product product = new Product(resultSet.getInt(1),
+						resultSet.getString(2),
+						resultSet.getInt(3),
+						resultSet.getInt(4),
+						resultSet.getString(5),
+						resultSet.getString(6),
+						resultSet.getInt(7),
+						resultSet.getString(8),
+						resultSet.getInt(9),
+						resultSet.getString(10),
+						resultSet.getString(11));
+						return product;
+				
+			}
+		} catch (Exception e) {	}	return null;
+	}
+	// 제품 좋아요 메소드
+	public int likeupdate(int p_num , int m_num) {
+		// 1. 좋아요 버튼 -> 좋아요 [제품번호 , 회원번호 ]
+		// 2. 제품번호와 회원번호가 일치하면 좋아요가 없으면 생성
+			// 일치한 좋아요가 있으면 삭제
+		String sql = null;
+		sql="select * from plike where p_num =? and m_num=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, p_num);
+			preparedStatement.setInt(2, m_num);
+			resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) { // 좋아요가 기존에 존재하면 
+				sql="delete from plike where p_num=? and m_num=?";
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setInt(1, p_num);
+				preparedStatement.setInt(2, m_num);
+				preparedStatement.executeUpdate();
+				return 1; // 좋아요 제거
+			}else { // 좋아요가 없다면
+				sql ="insert into plike (p_num , m_num) values (? , ?)";
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setInt(1, p_num);
+				preparedStatement.setInt(2, m_num);
+				preparedStatement.executeUpdate();
+				return 2; // 좋아요 추가
+				
+			}
+		} catch (Exception e) { } return 0;
+	}
+	// 제품좋아요 확인 메소드
+	public boolean likecheck(int p_num , int m_num) {
+		String sql="select * from plike where p_num =? and m_num=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, p_num);
+			preparedStatement.setInt(2, m_num);
+			resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) {
+				return true;
+			}
+		} catch (Exception e) {	} return false;
+		
+	}
 }

@@ -250,7 +250,7 @@ $(function(){
 	});		
 });
 /*회원 주소 수정end*/	
-// 게시물 상태 변경 start
+/*게시물 상태 변경 start*/
 function activechange(p_num){
 	if( confirm("제품의 상태를 변경하시겠습니까?")== true){
 		$(function(){
@@ -272,7 +272,68 @@ function activechange(p_num){
 		
 	}
 }
+/*게시물 상태 변경 end*/
+/*제품 수량 변경 start*/
+function pchange( type , stock , price) {  // JS는 자료형 X
+	var pcount = document.getElementById("p_count").value*1; 
+	if(type == 'm') { // 마이너스 버튼을 눌렀을때
+		pcount -= 1;
+		if(pcount < 1) {
+			alert('최소 수량은 1개 입니다.');
+			pcount = 1;
+		}
+	}else if (type== 'p') {
+		pcount += 1;
+		if(pcount> stock) {
+			alert('최대수량입니다.');
+			pcount = stock;
+		}
+	}else {
+		pcount += 0;
+		if(pcount> stock) {
+			alert('죄송합니다. 재고가 부족합니다.');
+			pcount = stock;
+		}if(pcount < 1) {
+			alert('최소 수량은 1개 입니다.');
+			pcount = 1;
+		}
+		return;
+	}
+	// 현재 수량 입력상자에 대입
+	document.getElementById("p_count").value = pcount;
+	var totalprice = pcount*price;
+	document.getElementById("total").innerHTML = totalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")+"원";
+					// 총가격.toString() : 문자열 변환
+						// .replace(기존문자, 새로운문자);
+							// 정규표현식 [문자패턴찾기]: /\B(?=(\d{3})+(?!\d))/g
+								// 1. / : 시작
+								// 2. \b : 시작 , 끝문자 [ 예 : 1234일경우 1, 4 ]
+								// 3. \d{3} : 숫자길이 [ 예 {3} : 3글자 ] d= 정수
+								// 4. !\d : 뒤에 숫자가 없을 경우 
+								// 4. /g : 전역 검색
+								 
+}	
+/*제품 수량 변경 end*/
+/*찜하기*/
+function plike(p_num,m_num){
+	if(m_num==0){alert('로그인후 찜하기가 가능합니다.'); return;}
+	// 비동기식 통신
+	$(function(){
+		$.ajax({
+			url : "../../controller/productlickcontroller.jsp",
+			data : {p_num : p_num , m_num : m_num},
+			success : function(result){
+				if(result==1){
+					document.getElementById("btnplick").innerHTML = "찜하기♡";
+				}else{
+					document.getElementById("btnplick").innerHTML = "찜하기♥";
+				}
+			}
+		});
+	});
+}
 
+ 
 /* 회원가입 유효성검사 */
   
 	function signupcheck(){
