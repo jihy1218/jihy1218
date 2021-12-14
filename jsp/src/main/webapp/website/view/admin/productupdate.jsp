@@ -22,14 +22,16 @@
 				차이름  <input class="col-md-3 form-control" type="text" name="p_name" value="<%=product.getP_name() %>">
 				제품가격 <input class="col-md-3 form-control" type="text" name="p_price" value="<%=product.getP_price() %>">
 				배기량 <input class="col-md-3 form-control" type="text" name="p_cc" value="<%=product.getP_cc() %>">
-				연료타입 <input class="col-md-3 form-control" type="text" name="p_fueltype" value="<%=product.getP_fueltype() %>">
+				연료타입 <select class="form-control" name="p_fueltype">
+						<option value="Gasoline">Gasoline</option>
+						<option value="Diesel">Diesel</option>
+						</select>
 				차량이미지 <input class="col-md-3 form-control" type="file" name="p_img"><%=product.getP_img() %> <br>
 				재고 <input class="col-md-3 form-control" type="text" name="p_stock" value="<%=product.getP_stock() %>">
 				카테고리 <select class="col-md-3 custom-select" name="p_category">
 						<option value="SUV">SUV</option>
 						<option value="SEDAN">세단</option>
-						<option value="M">M12312312</option>
-						<option value="M">M12312312</option>
+						<option value="M">M</option>
 						</select><br>
 				상세설명 <textarea class="col-md-3 form-control" rows="" cols="" name="p_contents"><%=product.getP_contents() %></textarea><br>
 				<input class="btn btn-info " type="submit" value="수정하기"><br>

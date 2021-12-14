@@ -13,7 +13,10 @@
 				차이름  <input class="col-md-3 form-control" type="text" name="p_name">
 				제품가격 <input class="form-control" type="text" name="p_price">
 				배기량 <input class="form-control" type="text" name="p_cc">
-				연료타입 <input class="form-control" type="text" name="p_fueltype">
+				연료타입 <select class="form-control" name="p_fueltype">
+						<option value="Gasoline">Gasoline</option>
+						<option value="Diesel">Diesel</option>
+						</select>
 				차량이미지 <input class="form-control" type="file" name="p_img">
 				재고 <input class="form-control" type="text" name="p_stock">
 				카테고리 <select class="custom-select" name="p_category">

@@ -332,8 +332,61 @@ function plike(p_num,m_num){
 		});
 	});
 }
+/*찜하기 end*/
 
- 
+/* 장바구니 start */
+function cartadd(){
+	// 제이쿼리를 이용한 값 가져오기 api
+		// id 속성 이용
+		// var p_num2 = $("#p_num").val();
+		// class속성 이용
+		// var p_num3 = $(".p_num").val();
+		// name 속성 이용
+		// var p_num4 = $("input[name=p_num]").val();
+	// 자바 스크립트를 이용한 값 가져오기
+		// 1. id 속성 이용
+		var p_num = document.getElementById("p_num").value; alert("제품 번호" + p_num);
+		// 2. class 속성 이용 class 속성 중복 허용하기 때문에 배열 이용
+		// var p_num5 = document.getElementsByClassName("p_num")[0].value;
+		// 3. name 속성 이용 name 속성 중복 허용하기 때문에 배열 이용
+		// var p_num6 = document.getElementsByName("p_num")[0].value;
+		var p_type = document.getElementById("p_type").value; alert("제품 타입 " + p_type);
+		if(p_type==null) {
+			alert("옵션을 선택해주세요.");
+		}
+		var p_count =document.getElementById("p_count").value; alert("수량 " + p_count);
+		// 컨트롤러 페이지 이동 [ 1. 하이퍼 링크 2. ajax]
+		// location.href = "../../controller/productcartcontroller.jsp?p_num="+p_num+"&p_size+"p_size+"&p_count="p_count;
+		$.ajax({ //페이지 전환이 없음 [해당 페이지와 통신]
+			url : "../../controller/productcartcontroller.jsp",
+			data : {p_num : p_num , p_type : p_type , p_count : p_count},
+			success : function(result){
+				if(confirm("장바구니에 담았습니다 [ 장바구니로 이동하시겠습니까? ]")==true){
+					location.href="productcart.jsp"
+				}
+			}
+		});
+}
+
+
+
+/* 장바구니 end */
+
+/*장바구니 전체삭제 start*/
+function cartdelete(type,p_num,p_type) {
+	$.ajax({
+		url : "../../controller/productcartdeletecontroller.jsp",
+		data : {type : type , p_num : p_num , p_type : p_type},
+		success : function(result) {
+			location.reload();
+		}
+	});
+}
+
+
+
+/*장바구니 전체삭제 end*/
+
 /* 회원가입 유효성검사 */
   
 	function signupcheck(){

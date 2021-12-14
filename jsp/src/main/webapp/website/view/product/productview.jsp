@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%
+		// 제품 상세페이지 
 		int p_num = Integer.parseInt(request.getParameter("p_num"));
 		Product product = ProductDao.getproductDao().getproducts(p_num);
 	%>
@@ -21,6 +22,7 @@
 				<img src="../../upload/<%=product.getP_img()%>" style="width:100%">
 			</div>
 			<div class="col-md-6">
+				<input type="hidden" class="p_num" name="p_num" id="p_num" value="<%=p_num%>">
 				<p>BMW
 				<h4><%=product.getP_name() %></h4>
 				<hr> <!-- 줄치기 -->
@@ -40,8 +42,19 @@
 				</div>
 				<hr>
 				<div class="row">
-					<div class="col-md-6">배기량 : <%=product.getP_cc() %></div>
-					<div class="col-md-6">엔진타입 : <%=product.getP_fueltype() %> </div>
+					<div class="col-md-3">배기량</div>
+					<div class="col-md-9"> <%=product.getP_cc() %>cc </div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">엔진타입</div>
+					<div class="col-md-9">
+						<select id="p_type" name="p_type" class="form-control">
+							<option> 옵션 선택 </option>
+							<option value="Gasoline">Gasoline</option>
+							<option value="Diesel">Diesel</option>
+						</select> 
+					</div>
 				</div>
 				<hr>
 				<div class="row">
@@ -49,7 +62,7 @@
 					<div class="col-md-9">
 						<div>
 							<button class="btn btn-success d-inline" onclick="pchange('p',<%=product.getP_stock()%>,<%=(product.getP_price())%>);">+</button>
-							<input class="form-control col-md-6 d-inline" type="text" id="p_count" value="1" onchange="pchange('s',<%=product.getP_stock()%>,<%=product.getP_price()%>);">
+							<input class="form-control col-md-6 d-inline" name="p_count" type="text" id="p_count" value="1" onchange="pchange('s',<%=product.getP_stock()%>,<%=product.getP_price()%>);">
 							<button class="btn btn-danger d-inline" onclick="pchange('m',<%=product.getP_stock()%>,<%=product.getP_price()%>);">-</button>
 						</div>
 					</div>
@@ -67,7 +80,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-6">
-						<button class="form-control bg-warning text-white"> 장바구니 </button>
+						<button onclick="cartadd();" class="form-control bg-warning text-white"> 장바구니 </button>
 					</div>
 					<%
 					int m_num = 0;
@@ -88,6 +101,28 @@
 				</div>
 			</div>
 		</div>
+		<br><br>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<ul class="navbar-nav col-md-12 text-center">
+				<li class="nav-item col-md-3"><a href="#detail" class="nav-link pview">차량상세</a></li>
+				<li class="nav-item col-md-3"><a href="#guide" class="nav-link pview">차량가이드</a></li>
+				<li class="nav-item col-md-3"><a href="#review" class="nav-link pview">차량리뷰</a></li>
+				<li class="nav-item col-md-3"><a href="#qna" class="nav-link pview">차량문의</a></li>
+			</ul>		 	
+		</nav>
+		<div id="detail">
+			차량 상세 위치 <br><br><br><br><br><br><br><br><br><br>
+		</div>
+		<div id="guide">
+			차량 가이드 위치 <br><br><br><br><br><br><br><br><br><br>
+		</div>
+		<div id="review">
+			차량 리뷰 위치 <br><br><br><br><br><br><br><br><br><br>
+		</div>
+		<div id="qna">
+			차량 문의 위치 <br><br><br><br><br><br><br><br><br><br>
+		</div>
 	</div>
+	<%@include file="../footer.jsp" %>
 </body>
 </html>
