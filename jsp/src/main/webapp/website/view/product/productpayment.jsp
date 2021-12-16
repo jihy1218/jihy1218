@@ -93,24 +93,65 @@
 				<div class="row">
 					<div class="col-md-3 m-2"><label>요청사항</label></div>					
 					<div class="col-md-8">
-						<select class="custom-select">
-							<option>--------요청사항 선택하기--------</option>
-							<option>부재시 경비실에 맡겨주세요!</option>
-							<option>배송전에 연락 주세요!</option>
-							<option>배송후에 연락 주세요!</option>
+						<select class="custom-select" id="order_contents">
+							<option value="요청사항없음">--------요청사항 선택하기--------</option>
+							<option value="부재시 경비실에 맡겨주세요!">부재시 경비실에 맡겨주세요!</option>
+							<option value="배송전에 연락 주세요!">배송전에 연락 주세요!</option>
+							<option value="배송후에 연락 주세요!">배송후에 연락 주세요!</option>
 						</select>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<h3>결제 정보</h3>
-				<h5>총결제금액</h5> 
-				<input id="totalprice" value="<%=totalprice %>">
+				<h5>결제 내용</h5>
+				<div class="row">
+					<div class="col-md-3">마일리지</div>
+					<div class="col-md-5">
+						<input class="form-control" type="text" id="point" placeholder="사용 할 마일리지"><br>
+						<span class="text-secondary">
+						사용가능 마일리지 : <span id="leftpoint"><%=member.getM_point() %></span></span>
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-secondary" onclick="pointcheck(<%=member.getM_point()%>);">사용</button>
+					</div>
+				</div>
+				<h5>결제 금액</h5>
+				<div class="row">
+					<div class="col-md-3">총 주문금액</div>
+					<div class="col-md-9 text-right">
+						<span id="totalprice"><%=totalprice %></span>원
+						(총 주문 차량품목 수 : <%=carts.size() %>)
+					</div>
+					<div class="col-md-3">탁송비</div>
+					<div class="col-md-9 text-right">
+						<span id="totaldeliverypay">220000</span>원
+					</div>					
+					<div class="col-md-3">사용한 마일리지 </div>
+					<div class="col-md-9 text-right">
+						<span id="usepoint">0</span>마일리지
+					</div>					
+					<div class="col-md-3">최종 결제 금액</div>
+					<div class="col-md-9 text-right">
+						<span id="totalpay">0</span>원
+					</div>					
+				</div>
+				<hr>
+				<h5>결제 방식</h5>
+				<div class="row d-flex justify-content-around">
+					<button onclick="payselect('samsung');" class="btn btn-outline-info col-md-2">삼성페이</button>
+					<button onclick="payselect('card');" class="btn btn-outline-info col-md-2">신용카드</button>
+					<button onclick="payselect('trans');" class="btn btn-outline-info col-md-2">계좌이체</button>
+					<button onclick="payselect('vbank');" class="btn btn-outline-info col-md-2">가상계좌</button>
+					<button onclick="payselect('phone');" class="btn btn-outline-info col-md-2">휴대폰</button>
+				</div>
+				<div style="display: none;" id="pay"></div>
+				<hr>
+				<div class="row d-flex justify-content-around my-3">
+					<button class="btn btn-success col-md-2" onclick="payment();">결제하기</button>
+					<button class="btn btn-danger col-md-2">취소하기</button>
+				</div>
 			</div>
-			
-		</div>
-		<div class="col-md-3 offset-5">
-			<button class="btn btn-info" onclick="payment();">결제하기</button>
 		</div>
 	</div>
 </body>

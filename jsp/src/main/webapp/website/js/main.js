@@ -1,4 +1,3 @@
-
 /* 다음주소 api*/
   //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
@@ -56,28 +55,57 @@
         }).open();
     }
 /*다음주소 api end*/
+/*결제방식체크 start*/
+function payselect(pay){
+	document.getElementById("pay").innerHTML = pay;
+}
 
+/*결제방식체크 end*/
 /*결제*/
 function payment(){
+	if(document.getElementById("pay").innerHTML==""){
+		alert("결제방식을 먼저 선택해주세요"); return;
+	}
 	var IMP = window.IMP; // 생략 가능
     IMP.init("imp96520987"); // 예: imp00000000
      // IMP.request_pay(param, callback) 결제창 호출
       IMP.request_pay({ // param
-          pg: "html5_inicis",
-          pay_method: "card",
-          merchant_uid: "ORD20180131-0000011",
+          pg: "html5_inicis",									// 결제 사
+          pay_method: document.getElementById("pay").innerHTML,	// 결제 방식
+          merchant_uid: "ORD20180131-0000011",	//
           name: "BMW ONLINE SHOP",
-          amount: document.getElementById("totalprice").value,
+          amount: document.getElementById("totalpay").innerHTML,
           buyer_email: "gildong@gmail.com",
-          buyer_name: "홍길동",
-          buyer_tel: "010-4242-4242",
-          buyer_addr: "서울특별시 강남구 신사동",
-          buyer_postcode: "01181"
+          buyer_name: $("#mname").val(),
+          buyer_tel: $("#mphone").val(),
+          buyer_addr: $("#sample4_postcode").val()+","+$("#sample4_roadAddress").val()+","+$("#sample4_jibunAddress").val(),
+          buyer_postcode: $("#sample4_postcode").val()
       }, function (rsp) { // callback
-          if (rsp.success) {
+          if(rsp.success) {
 	
-          } else {
-	
+          }else{// 결제 실패했을시
+          		// 테스트 : 결제 성공이라고 생각
+          		$.ajax({
+					url : "/jsp/website/controller/productpaymentcontroller.jsp",
+					data : { 
+						order_name : $("#mname").val(),
+						order_phone : $("#mphone").val(),
+						order_address : $("#sample4_postcode").val()+","+$("#sample4_roadAddress").val()+","+$("#sample4_jibunAddress").val()+$("#sample4_postcode").val(),
+						order_pay : document.getElementById("totalpay").innerHTML,
+						order_payment : document.getElementById("pay").innerHTML,
+						delivery_pay : 220000,
+						order_contents : document.getElementById("order_contents").value
+					},
+					success : function(result){
+						if(result==1){
+						alert("주문이 완료되었습니다.");
+							// 결제완료 페이지						
+							location.href="productpaymentsuccess.jsp";
+						}else{
+							alert("DB오류야멍충멍충");
+						}
+					}
+				});
           }
       });
 }
@@ -478,12 +506,23 @@ function pchange2(i,type,stock,price) {
 			}
 		});
 	});
-	
-
-
-
-
 /*회원과 동일 체크 end*/
+/*결제 정보 start*/
+function pointcheck(m_point){
+	var point =  document.getElementById("point").value*1;
+	if(m_point<point){
+		alert("포인트가 부족합니다.");
+		point=0;
+	}else{
+		document.getElementById("usepoint").innerHTML = point;
+		document.getElementById("leftpoint").innerHTML = (m_point-point);
+	}
+	var totalprice =  document.getElementById("totalprice").innerHTML*1;
+	var totaldeliverypay =  document.getElementById("totaldeliverypay").innerHTML*1;
+	document.getElementById("totalpay").innerHTML = totalprice+totaldeliverypay-point;
+}
+/*결제 정보 end*/
+
 
 /* 회원가입 유효성검사 */
   
