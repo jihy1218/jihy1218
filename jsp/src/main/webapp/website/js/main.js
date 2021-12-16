@@ -57,6 +57,33 @@
     }
 /*다음주소 api end*/
 
+/*결제*/
+function payment(){
+	var IMP = window.IMP; // 생략 가능
+    IMP.init("imp96520987"); // 예: imp00000000
+     // IMP.request_pay(param, callback) 결제창 호출
+      IMP.request_pay({ // param
+          pg: "html5_inicis",
+          pay_method: "card",
+          merchant_uid: "ORD20180131-0000011",
+          name: "BMW ONLINE SHOP",
+          amount: document.getElementById("totalprice").value,
+          buyer_email: "gildong@gmail.com",
+          buyer_name: "홍길동",
+          buyer_tel: "010-4242-4242",
+          buyer_addr: "서울특별시 강남구 신사동",
+          buyer_postcode: "01181"
+      }, function (rsp) { // callback
+          if (rsp.success) {
+	
+          } else {
+	
+          }
+      });
+}
+
+
+
 /* 아이디 중복체크 [ ajax ] */
 	$( function(){
 		// $("id명").이벤트명( 함수명(){ 실행코드; } );
@@ -351,7 +378,7 @@ function cartadd(){
 		// 3. name 속성 이용 name 속성 중복 허용하기 때문에 배열 이용
 		// var p_num6 = document.getElementsByName("p_num")[0].value;
 		var p_type = document.getElementById("p_type").value; alert("제품 타입 " + p_type);
-		if(p_type==null) {
+		if(p_type=="0") {
 			alert("옵션을 선택해주세요.");
 		}
 		var p_count =document.getElementById("p_count").value; alert("수량 " + p_count);
@@ -386,6 +413,77 @@ function cartdelete(type,p_num,p_type) {
 
 
 /*장바구니 전체삭제 end*/
+
+/*장바구니 수량 start*/
+function pchange2(i,type,stock,price) {
+	var p_count = document.getElementById("p_count"+i).value*1;
+	if(type == 'm') { // 마이너스 버튼을 눌렀을때
+		p_count -= 1;
+		if(p_count < 1) {
+			alert('최소 수량은 1개 입니다.');
+			p_count = 1;
+		}
+	}else if (type== 'p') {
+		p_count += 1;
+		if(p_count> stock) {
+			alert('최대수량입니다.');
+			p_count = stock;
+		}
+	}else {
+		p_count += 0;
+		if(p_count> stock) {
+			alert('죄송합니다. 재고가 부족합니다.');
+			p_count = stock;
+		}if(p_count < 1) {
+			alert('최소 수량은 1개 입니다.');
+			p_count = 1;
+		}
+	}
+	// 현재 수량 입력상자에 대입
+	document.getElementById("p_count"+i).value = p_count;
+	var totalprice = p_count*price;
+	document.getElementById("total"+i).innerHTML = totalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",")+"원";
+	$.ajax({
+		url : "../../controller/productcartdeletecontroller.jsp",
+		data : {type : type , p_num : -1 , p_type : -1 , i:i , p_count : p_count},
+		success : function(result) {
+			location.reload();
+		}
+	});
+}
+/*장바구니 수량 end*/
+
+/*회원과 동일 체크 start*/
+	// 체크 유무 검사 
+	// $(document).ready(function(){실행문}); // 문서 대기 메소드
+	$(document).ready(function(){
+		$("#checkbox").change(function(){
+			// 체크박스가 변경되면 = true;
+				// .is : 해당태그에 속성 체크 확인
+			if($("#checkbox").is(":checked")){ // 체크되면
+				$("#mname").val($("#name").val());
+				$("#mphone").val($("#phone").val());
+				$("#sample4_postcode").val($("#address1").val());
+				$("#sample4_roadAddress").val($("#address2").val());
+				$("#sample4_jibunAddress").val($("#address3").val());
+				$("#sample4_detailAddress").val($("#address4").val());
+				
+			}else{ // 체크가 해제되면
+				$("#mname").val("");
+				$("#mphone").val("");
+				$("#sample4_postcode").val("");
+				$("#sample4_roadAddress").val("");
+				$("#sample4_jibunAddress").val("");
+				$("#sample4_detailAddress").val("");
+			}
+		});
+	});
+	
+
+
+
+
+/*회원과 동일 체크 end*/
 
 /* 회원가입 유효성검사 */
   

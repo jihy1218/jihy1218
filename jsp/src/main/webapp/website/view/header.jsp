@@ -71,6 +71,7 @@
 							<li class="nav-item"><a href="" class="nav-link">5시리즈</a></li>
 							<li class="nav-item"><a href="" class="nav-link">7시리즈</a></li>
 							<li class="nav-item"><a href="" class="nav-link">이벤트</a></li>
+							<li class="nav-item"><a href="/jsp/website/view/product/productcart.jsp" class="nav-link">장바구니</a></li>
 							<li class="nav-item"><a href="" class="nav-link">구매후기</a></li>
 							<li class="nav-item"><a href="/jsp/website/view/board/boardlist.jsp" class="nav-link">고객센터</a></li>
 						</ul>

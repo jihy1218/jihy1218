@@ -50,7 +50,7 @@
 					<div class="col-md-3">엔진타입</div>
 					<div class="col-md-9">
 						<select id="p_type" name="p_type" class="form-control">
-							<option> 옵션 선택 </option>
+							<option value="0"> 옵션 선택 </option>
 							<option value="Gasoline">Gasoline</option>
 							<option value="Diesel">Diesel</option>
 						</select> 
