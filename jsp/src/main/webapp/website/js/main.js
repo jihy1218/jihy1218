@@ -400,16 +400,16 @@ function cartadd(){
 		// var p_num4 = $("input[name=p_num]").val();
 	// 자바 스크립트를 이용한 값 가져오기
 		// 1. id 속성 이용
-		var p_num = document.getElementById("p_num").value; alert("제품 번호" + p_num);
+		var p_num = document.getElementById("p_num").value;
 		// 2. class 속성 이용 class 속성 중복 허용하기 때문에 배열 이용
 		// var p_num5 = document.getElementsByClassName("p_num")[0].value;
 		// 3. name 속성 이용 name 속성 중복 허용하기 때문에 배열 이용
 		// var p_num6 = document.getElementsByName("p_num")[0].value;
-		var p_type = document.getElementById("p_type").value; alert("제품 타입 " + p_type);
+		var p_type = document.getElementById("p_type").value;
 		if(p_type=="0") {
 			alert("옵션을 선택해주세요.");
 		}
-		var p_count =document.getElementById("p_count").value; alert("수량 " + p_count);
+		var p_count =document.getElementById("p_count").value;
 		// 컨트롤러 페이지 이동 [ 1. 하이퍼 링크 2. ajax]
 		// location.href = "../../controller/productcartcontroller.jsp?p_num="+p_num+"&p_size+"p_size+"&p_count="p_count;
 		$.ajax({ //페이지 전환이 없음 [해당 페이지와 통신]
@@ -522,7 +522,32 @@ function pointcheck(m_point){
 	document.getElementById("totalpay").innerHTML = totalprice+totaldeliverypay-point;
 }
 /*결제 정보 end*/
+/*주문목록 스크롤(Jquery) start*/
+	/*$(window) : 현재 창*/
+	var item = 2; // 기본 주문2개를 제외한 세번째 주문부터
+	$(window).scroll(function(){
+		/*$(window).scrolltop()) : 현재 스크롤의 위치*/
+		/*alert("현재 스크롤 위치 : " + $(window).scrolltop());
+		alert("현재 화면의 높이[보이는화면] : " + $(window).height());
+		alert("현재 문서의 높이[보이지않는 화면까지 포함] : " + $(document).height());*/
+		// 스크롤이 바닥에 닿았을때
+		if($(window).scrollTop()==$(document).height() - $(window).height()) {
+			// (문서전체) 현재스크롤위치 = 문서전체높이 - 현재문서높이
+			$.ajax({
+				url : "/jsp/website/controller/orderlistscrollcontroller.jsp",
+				data : {item : item},
+				success : function(result){
+					$("section").append(result);
+				}
+			});
+			item++;	// 스크롤 이벤트가 바닥에 닿았을때 주문1씩 증가
+		}
+	});
 
+
+
+
+/*주문목록 스크롤 end*/
 
 /* 회원가입 유효성검사 */
   

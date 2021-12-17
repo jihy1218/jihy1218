@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import dto.Cart;
 import dto.Porder;
+import dto.Porderdetail;
 
 public class PorderDao extends DB{
 
@@ -13,7 +14,7 @@ public class PorderDao extends DB{
 	public static PorderDao porderDao = new PorderDao();
 	public static PorderDao getPorderDao() {return porderDao;}
 	
-	// 1. 주문등록
+	// 1. 주문등록 [1.주문등록 2.세부주문 등록 3. 재고 업데이트] 
 	public boolean orderwrite(Porder porder,ArrayList<Cart> carts) {
 		String sql ="insert into porder (m_num,order_name,order_phone,order_address,order_pay,order_payment,delivery_pay,order_contents)values(?,?,?,?,?,?,?,?)";
 		try {
@@ -43,13 +44,61 @@ public class PorderDao extends DB{
 					preparedStatement.setInt(3, cart.getP_count());
 					preparedStatement.setInt(4, 1);
 					preparedStatement.executeUpdate();
+					
+					// 3. 재고 업데이트처리
+					sql ="update product set p_stock = p_stock - ? where p_num=?";
+					preparedStatement = connection.prepareStatement(sql);
+					preparedStatement.setInt(1, cart.getP_count());
+					preparedStatement.setInt(2, cart.getP_num());
+					preparedStatement.executeUpdate();
 				}
 			}
 			return true;
-						
 		} catch (Exception e) {	} return false;
 	}
-	// 2. 주문상세등록
-	
+	// 2. 주문목록 빼오기
+	public ArrayList<Porder> getporderlist(int m_num){
+		ArrayList<Porder> porders = new ArrayList<Porder>();
+		String slq ="select * from porder where m_num=? order by order_num desc";
+		try {
+			preparedStatement = connection.prepareStatement(slq);
+			preparedStatement.setInt(1, m_num);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				Porder porder = new Porder(
+						resultSet.getInt(1),
+						resultSet.getInt(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getString(6),
+						resultSet.getInt(7),
+						resultSet.getString(8),
+						resultSet.getInt(9),
+						resultSet.getInt(10),
+						resultSet.getString(11));
+						porders.add(porder);
+			} return porders;
+		} catch (Exception e) {	} return null;
+	}
+	// 상세보기
+	public ArrayList<Porderdetail> getporderdetaillist(int order_num){
+		ArrayList<Porderdetail> porderdetails = new ArrayList<>();
+		String sql ="select * from porderdetail where order_num=? ";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, order_num);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				Porderdetail porderdetail = new Porderdetail(
+							resultSet.getInt(1),
+							resultSet.getInt(2),
+							resultSet.getInt(3),
+							resultSet.getInt(4),
+							resultSet.getInt(5));
+				porderdetails.add(porderdetail);
+			} return porderdetails;
+		} catch (Exception e) {	} return null;
+	}
 	
 }

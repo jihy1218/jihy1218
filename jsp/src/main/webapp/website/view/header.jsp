@@ -1,3 +1,4 @@
+<%@page import="dao.ProductDao"%>
 <%@page import="dao.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -24,6 +25,7 @@
 		Login login = (Login)session.getAttribute("login");
 		String loginid = null;
 		if(login != null) {loginid = login.getM_id();}
+		ProductDao.getproductDao().stockupdate();	// 실시간 재고 업데이트
 	%>
 	<!-- 헤더 start -->
 		<div class="fixed-top bg-white">	<!-- 상단 고정 , 배경 흰색 -->
