@@ -17,6 +17,8 @@
 	<!-- 부트스트랩 js설정 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- 차트 api 호출 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <!-- js 호출 -->
 	<script type="text/javascript" src="/jsp/website/js/main.js"></script>
 	<!-- 다음 주소 api js호출 -->

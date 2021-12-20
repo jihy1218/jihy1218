@@ -1,6 +1,9 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
 
 import dto.Cart;
 import dto.Porder;
@@ -98,6 +101,19 @@ public class PorderDao extends DB{
 							resultSet.getInt(5));
 				porderdetails.add(porderdetail);
 			} return porderdetails;
+		} catch (Exception e) {	} return null;
+	}
+	// 날짜별 주문수
+	public JSONObject getorderdatecount(){
+		JSONObject jsonObject = new JSONObject();
+		String sql = "select substring_index(order_date,' ',1) ,count(*) from porder group by substring_index(order_date,' ',1)";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				jsonObject.put(resultSet.getString(1), resultSet.getInt(2));
+			}
+			return jsonObject;
 		} catch (Exception e) {	} return null;
 	}
 	

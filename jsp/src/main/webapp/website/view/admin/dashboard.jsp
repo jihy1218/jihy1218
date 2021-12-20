@@ -32,6 +32,7 @@
 				<input class="col-md-1 ml-5 " type="submit" value="검색">
 			</form>
 			<a href="productwrite.jsp"><button class="float-right btn btn-primary">제품등록</button></a>
+			<a href="productchart.jsp"><button class="float-right btn btn-secondary">제품통계</button></a>
 			<h3>제품등록</h3>
 			<table class="table">
 				<tr>
