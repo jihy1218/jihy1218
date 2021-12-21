@@ -566,9 +566,10 @@ function pointcheck(m_point){
 		var key = keys[i];
 		alert("키 : "+key+ "값 : "+test[key]);
 	}*/
+/*주문 그래프 start*/
 	// json 형식으로 가져오기
 	//$.getJSON('경로/파일명',function(json인수명){});
-	$.getJSON('/jsp/website/controller/productcart.jsp',function(jsonObject){
+	$.getJSON('/jsp/website/controller/productchart.jsp?type=1',function(jsonObject){
 		var keyval = [ ]; 	// 모든 키를 저장하는 배열
 		var valueval = [ ];	// 모든 값을 저장하는 배열
 		var keys = Object.keys(jsonObject); // Object.keys(변수명)  : 모든 키 호출
@@ -577,56 +578,151 @@ function pointcheck(m_point){
 			valueval[i] = jsonObject[keyval[i]];	// i번째 값 저장
 		}
 		/*차트 만들기 start*/
-			// 1. 차트 표기할 위치 선정
-			var content = document.getElementById("mychart").getContext("2d");
-			// 2. 차트 변수 생성
-			/*var 차트이름 = new Chart("차트위치",{차트속성1 : 값1 , 차트속성2 : 값2});*/
-			var myChart = new Chart(content,{
-				type : 'bar' , // 차트의 항목 [ bar : 막대차트 , line : 선차트]
-				data : {			// 차트의 데이터 [ 가로축 , 세로축 , 계열값 ] 
-					labels : keyval, // 가로축
-					datasets : [
-						{ 				// 계열 추가 [{계열1},{계열2},{계열3}]
-						label : '날짜별 주문수',	// 계열명
-						data : valueval,		// 계열 데이터
-						backgroundColor: [		// 계열색상
-		                'rgba(255, 99, 132, 0.2)',
-		                'rgba(54, 162, 235, 0.2)',
-		                'rgba(255, 206, 86, 0.2)',
-		                'rgba(75, 192, 192, 0.2)',
-		                'rgba(153, 102, 255, 0.2)',
-		                'rgba(255, 159, 64, 0.2)'
-				        ],
-						borderColor: [	// 계열 테두리 색상
-				                'rgba(255, 99, 132, 1)',
-				                'rgba(54, 162, 235, 1)',
-				                'rgba(255, 206, 86, 1)',
-				                'rgba(75, 192, 192, 1)',
-				                'rgba(153, 102, 255, 1)',
-				                'rgba(255, 159, 64, 1)'
-				        ],
-				      	borderWidth: 1	// 계열 테두리 굵기
+		// 1. 차트 표기할 위치 선정
+		var content = document.getElementById("mychart").getContext("2d");
+		// 2. 차트 변수 생성
+		/*var 차트이름 = new Chart("차트위치",{차트속성1 : 값1 , 차트속성2 : 값2});*/
+		var myChart = new Chart(content,{
+			type : 'bar' , // 차트의 항목 [ bar : 막대차트 , line : 선차트]
+			data : {			// 차트의 데이터 [ 가로축 , 세로축 , 계열값 ] 
+				labels : keyval, // 가로축
+				datasets : [
+					{ 				// 계열 추가 [{계열1},{계열2},{계열3}]
+					label : '날짜별 주문수',	// 계열명
+					data : valueval,		// 계열 데이터
+					backgroundColor: [		// 계열색상
+	                'rgba(255, 99, 132, 0.2)',
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(255, 206, 86, 0.2)',
+	                'rgba(75, 192, 192, 0.2)',
+	                'rgba(153, 102, 255, 0.2)',
+	                'rgba(255, 159, 64, 0.2)'
+			        ],
+					borderColor: [	// 계열 테두리 색상
+			                'rgba(255, 99, 132, 1)',
+			                'rgba(54, 162, 235, 1)',
+			                'rgba(255, 206, 86, 1)',
+			                'rgba(75, 192, 192, 1)',
+			                'rgba(153, 102, 255, 1)',
+			                'rgba(255, 159, 64, 1)'
+			        ],
+			      	borderWidth: 1	// 계열 테두리 굵기
+					}
+				]
+			},
+			options:{ // 차트 옵션
+				scales:{
+					yAxes:[	//  y : 세로축
+						{
+							ticks:{
+								beginAtZero : true // 기본값 : 0부터 시작
+							}
 						}
 					]
-				},
-				options:{ // 차트 옵션
-					scales:{
-						yAxes:[	//  y : 세로축
-							{
-								ticks:{
-									beginAtZero : true // 기본값 : 0부터 시작
-								}
-							}
-						]
-					}	
-				},
-				
-		  	
-			});
-		/*차트 만들기 end*/
+				}	
+			},
+		});
+	/*차트 만들기 end*/
+	});
+/*JSON end*/
+/*주문 그래프 end*/
+
+/*제품별 판매량 그래프 start*/
+	$.getJSON('/jsp/website/controller/productchart.jsp?type=2',function(jsonObject){
+		var productname = [ ]; 	// 모든 키를 저장하는 배열
+		var productcount = [ ];	// 모든 값을 저장하는 배열
+		var keys2 = Object.keys(jsonObject); // Object.keys(변수명)  : 모든 키 호출
+		for(var i = 0 ;i<keys2.length ; i++){	// 키 개수 만큼 반복
+			productname[i] = keys2[i];	// 모든 제품 이름계열 저장
+			productcount[i] = jsonObject[productname[i]];	// 판매량 계열에 저장
+		}
+		var content2 = document.getElementById("productchart").getContext("2d");
+		var myChart2 = new Chart(content2,{
+			type : 'line' , // 차트의 항목 [ bar : 막대차트 , line : 선차트]
+			data : {			// 차트의 데이터 [ 가로축 , 세로축 , 계열값 ] 
+				labels : productname, // 가로축
+				datasets : [
+					{ 				// 계열 추가 [{계열1},{계열2},{계열3}]
+					label : '제품별 주문수',	// 계열명
+					data : productcount,		// 계열 데이터
+				  	backgroundColor: [
+				      'rgba(255, 99, 132, 0.2)',
+				      'rgba(255, 159, 64, 0.2)',
+				      'rgba(255, 205, 86, 0.2)',
+				      'rgba(75, 192, 192, 0.2)',
+				      'rgba(54, 162, 235, 0.2)',
+				    ],
+				    borderColor: [
+				      'rgb(255, 99, 132)',
+				      'rgb(255, 159, 64)',
+				      'rgb(255, 205, 86)',
+				      'rgb(75, 192, 192)',
+				      'rgb(54, 162, 235)',
+				    ],
+				    borderWidth: 1
+					}
+				]	
+			},options: {
+				indexAxis: 'y',
+			    scales: {
+					x: {
+			       		beginAtZero: true
+			    	}
+			    }
+			}
+		});
 	});
 
-/*JSON end*/
+/*제품별 판매량 그래프 end*/
+/*제품판매추이 start*/
+function pchange(){
+	var p_num = $("#pselect").val();
+	$.getJSON('/jsp/website/controller/productchart.jsp?type=3&p_num='+p_num,function(jsonObject){
+		var productdate = [ ]; 	// 모든 키를 저장하는 배열
+		var productcount2 = [ ];	// 모든 값을 저장하는 배열
+		var keys3 = Object.keys(jsonObject); // Object.keys(변수명)  : 모든 키 호출
+		for(var i = 0 ;i<keys3.length ; i++){	// 키 개수 만큼 반복
+			productdate[i] = keys3[i];	// 모든 제품 이름계열 저장
+			productcount2[i] = jsonObject[productdate[i]];	// 판매량 계열에 저장
+		}
+		var content3 = document.getElementById("datechart").getContext("2d");
+		var myChart3 = new Chart(content3,{
+			type : 'line' , // 차트의 항목 [ bar : 막대차트 , line : 선차트]
+			data : {			// 차트의 데이터 [ 가로축 , 세로축 , 계열값 ] 
+				labels : productdate, // 가로축
+				datasets : [
+					{ 				// 계열 추가 [{계열1},{계열2},{계열3}]
+					label : '제품별 주문수',	// 계열명
+					data : productcount2,		// 계열 데이터
+				  	backgroundColor: [
+				      'rgba(255, 99, 132, 0.2)',
+				      'rgba(255, 159, 64, 0.2)',
+				      'rgba(255, 205, 86, 0.2)',
+				      'rgba(75, 192, 192, 0.2)',
+				      'rgba(54, 162, 235, 0.2)',
+				    ],
+				    borderColor: [
+				      'rgb(255, 99, 132)',
+				      'rgb(255, 159, 64)',
+				      'rgb(255, 205, 86)',
+				      'rgb(75, 192, 192)',
+				      'rgb(54, 162, 235)',
+				    ],
+				    borderWidth: 1
+					}
+				]	
+			},options: {
+				indexAxis: 'y',
+			    scales: {
+					x: {
+			       		beginAtZero: true
+			    	}
+			    }
+			}
+		});
+	});
+}
+/*제품판매추이 end*/
 
 /* 회원가입 유효성검사 */
   
@@ -698,4 +794,24 @@ function pointcheck(m_point){
 	}
 
 /* 회원가입 유효성검사 end */
+/*카카오 지도 start*/
+var mapcount = 0;
+function map(i,lat,lng){
+	if(mapcount==0){
+		document.getElementById("map"+i).style.display="";
+		var mapContainer = document.getElementById('map'+i), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+		        level: 4 // 지도의 확대 레벨
+		    };
+		mapcount++;
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+	}else if(mapcount==1){
+		document.getElementById("map"+i).style.display="none";
+		mapcount=0;
+	}
+}
+
+/*카카오 지도 end*/
 

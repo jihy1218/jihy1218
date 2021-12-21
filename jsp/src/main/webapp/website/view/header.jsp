@@ -19,9 +19,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<!-- 차트 api 호출 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<!-- kakao 지도 api 호출 -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f314120eb4cf5875277742d6712a4cd"></script>
     <!-- js 호출 -->
 	<script type="text/javascript" src="/jsp/website/js/main.js"></script>
-	<!-- 다음 주소 api js호출 -->
+	<!-- 다음 우편주소 api js호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	<!-- 다음 우편 -->
 	<%
 		Login login = (Login)session.getAttribute("login");

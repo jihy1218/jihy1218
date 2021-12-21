@@ -16,8 +16,6 @@
 		// 검색
 		String key = request.getParameter("key");
 		String keyword = request.getParameter("keyword");
-		
-				
 		ArrayList<Product> products = ProductDao.getproductDao().productlist(key , keyword);
 	%>
 		<div class="container">
@@ -33,6 +31,7 @@
 			</form>
 			<a href="productwrite.jsp"><button class="float-right btn btn-primary">제품등록</button></a>
 			<a href="productchart.jsp"><button class="float-right btn btn-secondary">제품통계</button></a>
+			<a href="api.jsp"><button class="float-right btn btn-danger">백신접종</button></a>
 			<h3>제품등록</h3>
 			<table class="table">
 				<tr>

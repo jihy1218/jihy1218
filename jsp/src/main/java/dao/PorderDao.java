@@ -1,5 +1,7 @@
 package dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -115,6 +117,42 @@ public class PorderDao extends DB{
 			}
 			return jsonObject;
 		} catch (Exception e) {	} return null;
+	}
+	// 제품별 주문수
+	public JSONObject getcount() {
+		JSONObject jsonObject = new JSONObject();
+		String sql = "select p_num,sum(p_count) from porderdetail group by p_num";
+		try {
+			preparedStatement =connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				sql = "select p_name from product where p_num="+resultSet.getInt(1);
+				PreparedStatement preparedStatement2 = connection.prepareStatement(sql);
+				ResultSet resultSet2 = preparedStatement2.executeQuery();
+				if(resultSet2.next()) {
+					jsonObject.put(resultSet2.getString(1),resultSet.getInt(2));
+				}
+			}
+			return jsonObject;
+		} catch (Exception e) {	} return null; 
+	}
+	// 제품 별 날짜 주문수
+	public JSONObject datecount(int p_num) {
+		JSONObject jsonObject = new JSONObject();
+		String sql = "select order_num,p_count from porderdetail where p_num="+p_num;
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				sql="select substring_index(order_date,' ',1) from porder where order_num="+resultSet.getInt(1);
+				PreparedStatement preparedStatement3 = connection.prepareStatement(sql);
+				ResultSet resultSet3 = preparedStatement3.executeQuery();
+				if(resultSet3.next()) {
+					jsonObject.put(resultSet3.getString(1),resultSet.getInt(2));
+				}
+			} return jsonObject;
+		} catch (Exception e) {	} return null;
+		
 	}
 	
 }
