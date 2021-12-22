@@ -28,8 +28,8 @@
 				받는 사람 : <input type="text" class="form-control" value="모두">
 				접속 회원 목록
 				<div id="mlist">
-					<button onclick="server1();">서버1</button>
-					<button onclick="server2();">서버2</button>
+				<input type="text" placeholder="입력" id="chatt">
+				<button onclick="change();">방만들기</button>
 				</div>
 			</div>
 		</div>
@@ -40,13 +40,10 @@
 		var loginid = document.getElementById("loginid").value; // value 속성이 있는 태그만 가능
 		// 3. 채팅창 가져오기
 		var msgbox = document.getElementById("msgbox");
+		var chatt = document.getElementById("chatt").value;
 		// 4. 웹소켓
 		// var webSocket = new WebSocket("ws://웹IP/경로")
-		var webSocket = new WebSocket("ws://localhost:8081/jsp/chatting")
-		
-		function server2() {
-			webSocket = new WebSocket("ws://localhost:8081/jsp/chatting2")
-		}	
+		var webSocket = new WebSocket("ws://localhost:8081/jsp/chatting/"+loginid);
 			// 접속 객체										// @ServerEndpoint 이동
 		// 5. 웹소켓 이벤트
 			webSocket.onopen = function(event) { onOpen(event)	}; // 웹 소켓 실행시 메소드
@@ -74,7 +71,7 @@
 			// 입력상자 초기화
 			document.getElementById("msginput").value=""; // 입력했던 내용물 초기화
 			// 스크롤이 있을경우 스크롤 위치를 아래로 이동
-			msgbox.scorllTop = msgbox.scrollHeight;	// 현재스크롤 위쪽위치 = 스크롤 전체 높이
+			msgbox.scrollTop = msgbox.scrollHeight;	// 현재스크롤 위쪽위치 = 스크롤 전체 높이
 		}
 		function entersend() {
 			// 엔터를 눌렀을때
@@ -99,7 +96,7 @@
 			var from = event.data.split(",")[0];	// : 기준으로 0번째 문자열
 			msgbox.innerHTML+="<div class='profile'>"+from+"</div>";
 			msgbox.innerHTML+="<div class='d-flex justify-content-start mx-2 my-1'><span class='tomsg'>"+msg+"</span><span class='msgtime d-flex align-items-end'>"+time+"</span></div>";
-			msgbox.scorllTop = msgbox.scrollHeight;	// 현재스크롤 위쪽위치 = 스크롤 전체 높이
+			msgbox.scrollTop = msgbox.scrollHeight;	// 현재스크롤 위쪽위치 = 스크롤 전체 높이
 		}
 	</script>
 </body>

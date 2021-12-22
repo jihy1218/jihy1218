@@ -6,9 +6,10 @@ import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
+import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-@ServerEndpoint("/chatting") // 1.서버소켓[종착점] @ServerEndpoint("/경로") 
+@ServerEndpoint("/chatting/{roomname}") // 1.서버소켓[종착점] @ServerEndpoint("/경로") 
 public class Chatting {
 	 
 	// 접속된 세션을 저장하는 리스트 [ArrayList 동기화미지원 vs Vector 동기화지원 ]
@@ -16,18 +17,18 @@ public class Chatting {
 	
 	// 2. 클라이언트가 서버로부터 접속 요청
 	@OnOpen // 소켓 접속하는 어노테이션
-	public void onOpen(Session session) {
-		// System.out.println(session.getId());
+	public void onOpen(Session session , @PathParam("roomname")String id ) {
+		System.out.println(id);
 		clients.add(session); // 리스트에 추가
 	}
 	// 3. 클라이언트가 서버로부터 접속 해지
 	@OnClose // 소켓을 닫는 어노테이션
-	public void onClose(Session session) {
+	public void onClose(Session session, @PathParam("roomname")String id) {
 		clients.remove(session); // 리스트에서 제거
 	}
 	// 4. 서버가 클라이언트로부터 메시지 받는 메소드
 	@OnMessage // 메시지를 받는 어노테이션 
-	public void onMessage(String msg, Session session) throws Exception{
+	public void onMessage(String msg, Session session, @PathParam("roomname")String id) throws Exception{
 		// 인수 : 메시지 , 세션
 		for(Session client : clients) {
 			// 모든 리스트에 저장된 세션으로부터
