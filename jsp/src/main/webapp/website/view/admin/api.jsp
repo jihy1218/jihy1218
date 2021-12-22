@@ -14,7 +14,6 @@
 </head>
 <body>
 	<%@include file="../header.jsp" %>
-		
 	<div class="container">
 		<table>
 	<%	// api 가져오기 순서

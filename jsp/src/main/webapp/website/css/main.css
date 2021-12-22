@@ -35,3 +35,40 @@ body{font-family: SDSamliphopangche_Basic;}
 	font-size : 1rem;
 	
 }
+#msgbox{
+	height : 500px;
+	background-color: #B2C7D9;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	overflow: auto;	/* 박스 크기보다 내용물이 넘쳤을때 스크롤 만들기 */
+}
+/* 스크롤바 표시 숨기기 */
+#msgbox::-webkit-scrollbar{
+	display: none;
+}
+.frommsg{
+	background-color: #FFEB33;
+	border-radius: 5px;
+	padding: 4px 8px 4px 8px;
+	margin: 5px;
+}
+.msgtime{
+	font-size: 0.9rem;
+}
+.tomsg{
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	padding: 4px 8px 4px 8px;
+	margin: 5px;
+}
+#mlist{
+	height : 350px;
+	background-color: #E7E7E8;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	overflow: auto;	/* 박스 크기보다 내용물이 넘쳤을때 스크롤 만들기 */
+}
+.profile {
+	font-size: 1rem;
+	margin: 3px; 
+}
