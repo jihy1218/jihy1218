@@ -38,9 +38,7 @@
 					<th>이미지</th>
 					<th>제품번호</th><th>차량명</th><th>차량가격</th><th>카테고리</th><th>상태</th><th>엔진타입</th><th>등록일</th><th>비고</th>
 				</tr>
-				<%
-					for(Product product : products) {
-				%>
+				<% for(Product product : products) { %>
 				<tr>
 					<td width="100px"><img style="max-width : 100%" src="../../upload/<%=product.getP_img()%>"></td>
 					<td><%=product.getP_num() %></td>
